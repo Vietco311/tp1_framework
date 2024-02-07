@@ -5,21 +5,15 @@ Create table compte (
     prenom_compte VARCHAR(255)
     );
 
-Create table site (
-    id_site INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
-    mail_compte VARCHAR(255) NOT NULL,
-    nom_site VARCHAR(255) NOT NULL,
-    url_site VARCHAR(255) NOT NULL,
-    FOREIGN KEY (mail_compte) REFERENCES compte(mail_compte)
-    );
     
-
     Create table blog (
     id_blog INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
+    mail_compte VARCHAR(255) NOT NULL,
     id_site INT NOT NULL,
     nom_blog VARCHAR(255) NOT NULL,
+    url_site VARCHAR(255) NOT NULL,
     sujet_blog VARCHAR(255),
-    FOREIGN KEY (id_site) REFERENCES site(id_site)
+    FOREIGN KEY (mail_compte) REFERENCES compte(mail_compte)
     );
     
 
