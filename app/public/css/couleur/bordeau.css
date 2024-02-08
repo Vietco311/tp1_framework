@@ -1,0 +1,33 @@
+* {
+    color: #201e1e;
+}
+
+
+main {
+    background-color: #a83131; 
+}
+
+header {
+    background-color: #8b0c0c;
+}
+
+nav {
+    background-color: #8b0c0c;
+}
+
+.menu-button {
+    background-color: #8b0c0c;
+}
+
+
+.horizontal-button:hover {
+    background-color: #a83131;
+}
+
+.burger-button:hover {
+    color: #887f7f;
+}
+
+.vertical-button:hover {
+    background-color: #a83131;
+}

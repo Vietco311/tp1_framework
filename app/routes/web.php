@@ -16,3 +16,18 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/burger', function () {
+    return view('burger');
+});
+
+Route::get('/horizontal', function () {
+    return view('horizontal');
+});
+
+Route::get('/vert-gauche', function () {
+    return view('vertgauche');
+});
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

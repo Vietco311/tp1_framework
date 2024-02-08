@@ -5,22 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title')</title>
     <!-- Ajoute tes liens CSS ici -->
-    <link rel="stylesheet" href="../css/horizontal.css">
+    <link rel="stylesheet" href="{{ asset('css/menu/horizontal.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/couleur/vintage.css') }}">
 </head>
 <body>
     <header>
-        <!-- Contenu de l'en-tête -->
+        <nav>
+            <!-- Menu horizontal -->
+            <ul>
+                <li><button class="menu-button horizontal-button" href="#">Accueil</button></li>
+                <li><button class="menu-button horizontal-button" href="#">Page 1</button></li>
+                <li><button class="menu-button horizontal-button" href="#">Page 2</button></li>
+                <!-- Ajoute d'autres éléments du menu selon tes besoins -->
+            </ul>
+        </nav>
     </header>
 
-    <nav>
-        <!-- Menu horizontal -->
-        <ul>
-            <li><a href="#">Accueil</a></li>
-            <li><a href="#">Page 1</a></li>
-            <li><a href="#">Page 2</a></li>
-            <!-- Ajoute d'autres éléments du menu selon tes besoins -->
-        </ul>
-    </nav>
+    
 
     <main>
         @yield('content')

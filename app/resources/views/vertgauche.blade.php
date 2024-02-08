@@ -4,22 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menu Verticale Gauche</title>
-    <link rel="stylesheet" href="../css/vertgauche.css">
+    <link rel="stylesheet" href="{{ asset('css/menu/vertgauche.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/couleur/vintage.css') }}">
     <!-- Ajoute tes liens CSS ici -->
 </head>
 <body>
     <header>
-        <!-- Contenu de l'en-tête -->
+        <nav>
+            <!-- Menu vertical gauche -->
+            <ul>
+                <li><button class="menu-button vertical-button" href="#">Accueil</button></li>
+                <li><button class="menu-button vertical-button" href="#">Page 1</button></li>
+                <li><button class="menu-button vertical-button" href="#">Page 2</button></li>
+                <!-- Ajoute d'autres éléments du menu selon tes besoins -->
+            </ul>
+        </nav>
     </header>
-    <nav>
-        <!-- Menu vertical gauche -->
-        <ul>
-            <li><a href="#">Accueil</a></li>
-            <li><a href="#">Page 1</a></li>
-            <li><a href="#">Page 2</a></li>
-            <!-- Ajoute d'autres éléments du menu selon tes besoins -->
-        </ul>
-    </nav>
+    
     <main>
         @yield('content')
     </main>
