@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Accueil</title>
     <link rel="stylesheet" href="{{ asset('css/menu/comment.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/couleur/bordeau.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/couleur/marin.css') }}">
     <x-head.tinymce-config />
 
     <!-- Inclure tes fichiers CSS, scripts, etc. ici -->

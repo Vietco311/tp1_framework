@@ -3,8 +3,8 @@
 }
 
 
-main {
-    background-color: #6e6e6e; 
+body {
+    background-color: #242424; 
 }
 
 header {
@@ -29,4 +29,33 @@ nav {
 
 .vertical-button:hover {
     background-color: #6e6e6e;
+}
+
+.page-container {
+    background-color: #838383;
+}
+
+.titre-acceuil {
+    background-color: #616161;
+}
+
+.comment-section {
+    background-color: #616161;
+}
+
+.comment-list {
+    border-color: #000000;
+}
+
+.comment-list .comment {
+    border-color: #000000;
+}
+
+.submit-comment {
+    background-color: #575757;
+}
+
+.submit-comment:hover{
+    background-color: #c0c0c0;
+    color: #575757;
 }

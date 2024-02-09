@@ -14,8 +14,8 @@
         <nav class="hide">
             <!-- Menu burger -->
             <ul>
-                <li><button class="menu-button burger-button" href="#">Accueil</button></li>
-                <li><button class="menu-button burger-button" href="#">Page 1</button></li>
+                <li><button class="menu-button burger-button" href="/">Accueil</button></li>
+                <li><button class="menu-button burger-button" href="/page-example">Page 1</button></li>
                 <li><button class="menu-button burger-button" href="#">Page 2</button></li>
                 <!-- Ajoute d'autres éléments du menu selon tes besoins -->
             </ul>

@@ -29,6 +29,9 @@ Route::get('/vert-gauche', function () {
     return view('vertgauche');
 });
 
+Route::get('/page-example', function () {
+    return view('pageexample');
+});
 
 Auth::routes();
 
