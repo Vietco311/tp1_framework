@@ -21,10 +21,6 @@
         </nav>
     </header>
     
-    <main>
-        @yield('content')
-    </main>
-
     <footer>
         <!-- Contenu du pied de page -->
     </footer>

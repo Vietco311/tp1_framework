@@ -21,12 +21,6 @@
         </nav>
     </header>
 
-    
-
-    <main>
-        @yield('content')
-    </main>
-
     <!-- Ajoute tes scripts ici -->
 </body>
 </html>

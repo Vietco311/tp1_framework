@@ -5,6 +5,11 @@ body {
     flex-direction: row;
 }
 
+header {
+    box-shadow: 0.5em 0em 0.4em rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
 nav {
     width: 150px;
 }

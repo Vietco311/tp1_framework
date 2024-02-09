@@ -1,0 +1,57 @@
+html{
+    height: 100%;
+}
+
+body{
+    margin: 0;
+    height: 100%;
+}
+
+.base-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 0px 200px;
+    z-index: 1;
+    
+}
+
+.titre-acceuil {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    height: 100px;
+    border-radius: 20px;
+    box-shadow: 0em 0.5em 0.5em rgba(0, 0, 0, 0.5);
+}
+
+.tinymce {
+    width: 70%;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 2em;
+}
+
+li {
+    padding: 1em;
+}
+
+.acceuil-button {
+    font-weight: bold;
+    font-size: 1.1em;
+    border: none;
+    transition-duration: 0.4s;
+}
+
+.page-container {
+    width: inherit;
+    min-height: 400px;
+    box-shadow: 0em 0.5em 0.5em rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    margin-bottom: 1em;
+}
+

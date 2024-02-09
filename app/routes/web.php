@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('acceuil');
 });
 
 Route::get('/burger', function () {
@@ -28,6 +28,10 @@ Route::get('/horizontal', function () {
 Route::get('/vert-gauche', function () {
     return view('vertgauche');
 });
+
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::post('/save-content', [App\Http\Controllers\AcceuilController::class, 'saveContent'])->name('saveContent');
