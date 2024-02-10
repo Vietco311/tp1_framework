@@ -3,6 +3,16 @@
 @extends('layouts.app') <!-- Assurez-vous d'avoir un layout de base, si utilisé -->
 
 @section('content')
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
@@ -14,12 +24,12 @@
                             @csrf
 
                             <div class="form-group row">
-                                <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+                                <label for="mail_compte" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 
                                 <div class="col-md-6">
-                                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                    <input id="mail_compte" type="email" class="form-control @error('mail_compte') is-invalid @enderror" name="mail_compte" value="{{ old('mail_compte') }}" required autocomplete="email" autofocus>
 
-                                    @error('email')
+                                    @error('mail_compte')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -28,12 +38,12 @@
                             </div>
 
                             <div class="form-group row">
-                                <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+                                <label for="mdp_compte" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
 
                                 <div class="col-md-6">
-                                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+                                    <input id="mdp_compte" type="password" class="form-control @error('mdp_compte') is-invalid @enderror" name="mdp_compte" required autocomplete="current-password">
 
-                                    @error('password')
+                                    @error('mdp_compte')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>

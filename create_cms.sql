@@ -9,9 +9,10 @@ Create table compte (
     Create table blog (
     id_blog INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
     mail_compte VARCHAR(255) NOT NULL,
-    id_site INT NOT NULL,
     nom_blog VARCHAR(255) NOT NULL,
-    url_site VARCHAR(255) NOT NULL,
+    url_blog VARCHAR(255) NOT NULL,
+    couleur_blog VARCHAR(255) NOT NULL,
+    template_blog VARCHAR(255) NOT NULL,
     sujet_blog VARCHAR(255),
     FOREIGN KEY (mail_compte) REFERENCES compte(mail_compte)
     );

@@ -27,22 +27,20 @@ class AuthController extends Controller
      */
     public function login(Request $request)
     {
-        $credentials = $request->validate([
+        $request->validate([
             'mail_compte' => 'required|email',
             'mdp_compte' => 'required',
         ]);
+        $user = User::where('mail_compte', $request->mail_compte)->first();
 
-        if (Auth::attempt($credentials)) {
-            $request->session()->regenerate();
+        if ($user && Hash::check($request->mdp_compte, $user->mdp_compte)) {
             Auth::login($user);
-            return redirect()->intended('/dashboard');
+            return redirect('/dashboard');
+        } else {
+            return redirect('/login')->with('error', 'Email ou mot de passe incorrect.');
         }
 
-        return back()->withErrors([
-            'mail_compte' => 'Les informations fournies ne correspondent pas à nos enregistrements.',
-        ]);
     }
-
     /**
      * Display the registration form.
      *

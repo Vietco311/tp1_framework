@@ -2,6 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\AccueilBackController;
+use App\Http\Controllers\DashboardCMSController;
+use App\Http\Controllers\CreateSiteController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -14,13 +18,19 @@ use App\Http\Controllers\AuthController;
 |
 */
 
+Route::middleware(['auth'])->group(function () {
+    Route::get('/dashboard', [DashboardCMSController::class, 'index']);
+});
 
-use App\Http\Controllers\DashboardCMSController;
+Route::get('/create-site', [CreateSiteController::class, 'index'])->name('create-site');
+Route::post('/store-site', [CreateSiteController::class, 'store'])->name('store-site');
 
 
-// Route pour le tableau de bord (dashboard)
+
 Route::get('/dashboard', [DashboardCMSController::class, 'index'])->name('dashboard');
 
+
+Route::get('/', [AccueilBackController::class, 'index'])->name('welcome');
 
 
 // Routes d'authentification
@@ -36,7 +46,7 @@ Route::get('/phpinfo', function () {
     return view('phpinfo');
 });
 
-Route::get('/', function () {
+Route::get('/acceuil', function () {
     return view('acceuil');
 });
 

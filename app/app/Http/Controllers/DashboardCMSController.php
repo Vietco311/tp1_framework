@@ -14,6 +14,12 @@ class DashboardCMSController extends Controller
 
     public function index()
     {
-        return view('dashboardCMS');
+        $user = auth()->user();
+        return view('dashboardCMS', compact('user'));
+    }
+
+    public function createSite()
+    {
+        return view('create-site');
     }
 }

@@ -65,6 +65,11 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    public function getAuthIdentifierName()
+{
+    return 'mail_compte';
+}
+
     /**
      * Get the password for the user.
      *
@@ -73,5 +78,10 @@ class User extends Authenticatable
     public function getAuthPassword()
     {
         return $this->mdp_compte;
+    }
+
+    public function blogs()
+    {
+        return $this->hasMany(Blog::class, 'mail_compte', 'mail_compte');
     }
 }
