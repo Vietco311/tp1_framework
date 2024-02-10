@@ -5,7 +5,7 @@
     <title>Accueil</title>
     <link rel="stylesheet" href="{{ asset('css/menu/comment.css') }}">
     <link rel="stylesheet" href="{{ asset('css/couleur/marin.css') }}">
-    <x-head.tinymce-config />
+    <x-head.tinymce-config-comment />
 
     <!-- Inclure tes fichiers CSS, scripts, etc. ici -->
 </head>
@@ -28,6 +28,6 @@
     <!-- Formulaire pour ajouter un nouveau commentaire -->
     <div class="comment-form">
         <h3>Ajouter un commentaire</h3>
-        <x-forms.tinymce-editor />
+        <x-forms.tinymce-comment />
     </div>
 </div>

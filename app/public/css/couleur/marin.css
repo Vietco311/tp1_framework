@@ -4,19 +4,15 @@
 
 
 body {
-    background-color: #98c9c9;  
+    background-color: #4e7ab9;  
 }
 
 header {
     background-color: #004c8b;
 }
 
-nav {
-    background-color: #003366;
-}
-
 .menu-button {
-    background-color: #003366;
+    background-color: #004c8b;
 }
 
 .horizontal-button:hover {
@@ -24,7 +20,7 @@ nav {
 }
 
 .burger-button:hover {
-    color: #54559b;
+    color: #4e7ab9;
 }
 
 .vertical-button:hover {
@@ -56,6 +52,6 @@ nav {
 }
 
 .submit-comment:hover{
-    background-color: #98c9c9;
+    background-color: #4e7ab9;
     color: #003366;
 }
