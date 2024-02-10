@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title')</title>
     <link rel="stylesheet" href="{{ asset('css/menu/burger.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/couleur/bordeau.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/couleur/marin.css') }}">
 </head>
 <body>
     <header>
@@ -21,9 +21,6 @@
             </ul>
         </nav>
     </header>
-    <main>
-        @yield('content')
-    </main>
 
     <!-- Ajoute tes scripts ici -->
     <script>

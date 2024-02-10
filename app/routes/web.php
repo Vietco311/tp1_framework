@@ -56,6 +56,10 @@ Route::get('/page-example', function () {
     return view('pageexample');
 });
 
+Route::get('/ecrire-page', function () {
+    return view('writingpage');
+});
+
 //Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
