@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Accueil</title>
     <link rel="stylesheet" href="{{ asset('css/page.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/couleur/marin.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/couleur/bordeau.css') }}">
 
     <!-- Inclure tes fichiers CSS, scripts, etc. ici -->
 </head>

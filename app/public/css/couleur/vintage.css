@@ -4,7 +4,7 @@
 
 
 body {
-    background-color: #242424; 
+    background-color: #646464; 
 }
 
 header {
@@ -40,7 +40,7 @@ nav {
 }
 
 .comment-section {
-    background-color: #616161;
+    background-color: #3b3b3b;
 }
 
 .comment-list {
@@ -58,4 +58,16 @@ nav {
 .submit-comment:hover{
     background-color: #c0c0c0;
     color: #575757;
+}
+
+.section-article{
+    background-color: rgb(228, 228, 228);
+}
+
+.titre-page{
+    color: #000000;
+}
+
+p {
+    color: #000000;
 }
