@@ -14,12 +14,12 @@
                             @csrf
 
                             <div class="form-group row">
-                                <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
+                                <label for="mail_compte" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 
                                 <div class="col-md-6">
-                                    <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                    <input id="mail_compte" type="email" class="form-control @error('mail_compte') is-invalid @enderror" name="mail_compte" value="{{ old('mail_compte') }}" required autocomplete="mail_compte">
 
-                                    @error('name')
+                                    @error('mail_compte')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -28,12 +28,12 @@
                             </div>
 
                             <div class="form-group row">
-                                <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+                                <label for="mdp_compte" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
 
                                 <div class="col-md-6">
-                                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+                                    <input id="mdp_compte" type="password" class="form-control @error('mdp_compte') is-invalid @enderror" name="mdp_compte" required autocomplete="new-password">
 
-                                    @error('email')
+                                    @error('mdp_compte')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -42,12 +42,12 @@
                             </div>
 
                             <div class="form-group row">
-                                <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+                                <label for="nom_compte" class="col-md-4 col-form-label text-md-right">{{ __('Last Name') }}</label>
 
                                 <div class="col-md-6">
-                                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+                                    <input id="nom_compte" type="text" class="form-control @error('nom_compte') is-invalid @enderror" name="nom_compte" value="{{ old('nom_compte') }}" required autocomplete="nom_compte">
 
-                                    @error('password')
+                                    @error('nom_compte')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -56,10 +56,16 @@
                             </div>
 
                             <div class="form-group row">
-                                <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
+                                <label for="prenom_compte" class="col-md-4 col-form-label text-md-right">{{ __('First Name') }}</label>
 
                                 <div class="col-md-6">
-                                    <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                                    <input id="prenom_compte" type="text" class="form-control @error('prenom_compte') is-invalid @enderror" name="prenom_compte" value="{{ old('prenom_compte') }}" required autocomplete="prenom_compte">
+
+                                    @error('prenom_compte')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
                                 </div>
                             </div>
 
