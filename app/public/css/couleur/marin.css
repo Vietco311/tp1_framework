@@ -11,6 +11,10 @@ header {
     background-color: #004c8b;
 }
 
+nav {
+    background-color: #004c8b;
+}
+
 .menu-button {
     background-color: #004c8b;
 }
@@ -54,4 +58,16 @@ header {
 .submit-comment:hover{
     background-color: #4e7ab9;
     color: #003366;
+}
+
+.section-article{
+    background-color: rgb(204, 213, 226);
+}
+
+.titre-page{
+    color: #1d1d1f;
+}
+
+p {
+    color: #1d1d1f;
 }

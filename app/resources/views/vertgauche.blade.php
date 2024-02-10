@@ -13,9 +13,9 @@
         <nav>
             <!-- Menu vertical gauche -->
             <ul>
-                <li><button class="menu-button vertical-button" href="#">Accueil</button></li>
-                <li><button class="menu-button vertical-button" href="#">Page 1</button></li>
-                <li><button class="menu-button vertical-button" href="#">Page 2</button></li>
+                <li class="button-container"><button class="menu-button vertical-button" href="#">Accueil</button></li>
+                <li class="button-container"><button class="menu-button vertical-button" href="#">Page 1</button></li>
+                <li class="button-container"><button class="menu-button vertical-button" href="#">Page 2</button></li>
                 <!-- Ajoute d'autres éléments du menu selon tes besoins -->
             </ul>
         </nav>

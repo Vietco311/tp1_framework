@@ -42,3 +42,11 @@ main {
     border: none;
     transition-duration: 0.4s;
 }
+
+.comment-section {
+    margin: 0px 20px;
+}
+
+.base-container {
+    align-items: stretch;
+}
