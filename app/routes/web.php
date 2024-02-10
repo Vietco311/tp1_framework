@@ -15,6 +15,13 @@ use App\Http\Controllers\AuthController;
 */
 
 
+use App\Http\Controllers\DashboardCMSController;
+
+
+// Route pour le tableau de bord (dashboard)
+Route::get('/dashboard', [DashboardCMSController::class, 'index'])->name('dashboard');
+
+
 
 // Routes d'authentification
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
@@ -25,6 +32,9 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('/register', [AuthController::class, 'showRegistrationForm'])->name('register');
 Route::post('/register', [AuthController::class, 'register']);
 
+Route::get('/phpinfo', function () {
+    return view('phpinfo');
+});
 
 Route::get('/', function () {
     return view('acceuil');
@@ -50,7 +60,7 @@ Route::get('/ecrire-page', function () {
     return view('writingpage');
 });
 
-Auth::routes();
+//Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
