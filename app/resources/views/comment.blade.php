@@ -14,20 +14,39 @@
 
     <!-- Liste des commentaires -->
     <ul class="comment-list">
-        <!-- Chaque commentaire est un élément de la liste -->
-        <li class="comment">
-            <div class="comment-author">Nom de l'auteur</div>
-            <div class="comment-content">
-                Contenu du commentaire. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            </div>
-        </li>
-
-        <!-- Ajoute d'autres commentaires ici... -->
+        @foreach($article->commentaires as $commentaire)
+            <li class="comment">
+                <div class="comment-author">{{ $commentaire->pseudo_commentaire }}</div>
+                <div class="comment-content">
+                    {{ $commentaire->contenu_commentaire }}
+                </div>
+            </li>
+        @endforeach
     </ul>
+
 
     <!-- Formulaire pour ajouter un nouveau commentaire -->
     <div class="comment-form">
-        <h3>Ajouter un commentaire</h3>
-        <x-forms.tinymce-comment />
-    </div>
+    <h3>Ajouter un commentaire</h3>
+    
+    <form method="post" action="{{ route('comment.store') }}">
+        @csrf
+        <input type="hidden" name="id_article" value="{{ $article->id_article }}">
+        
+        <div class="form-group">
+            <label for="pseudo_commentaire">Nom de l'auteur:</label>
+            <input type="text" name="pseudo_commentaire" class="form-control" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="contenu_commentaire">Contenu du commentaire:</label>
+            <textarea name="contenu_commentaire" class="form-control" required>
+            </textarea>
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Ajouter le commentaire</button>
+    </form>
+</div>
+
+
 </div>

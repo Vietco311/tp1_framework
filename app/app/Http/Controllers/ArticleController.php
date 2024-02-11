@@ -70,6 +70,11 @@ class ArticleController extends Controller
         return view('blogs.showarticle', ['article' => $article, 'blog'=> $article->blog, 'articles' => $article->blog->articles]);
     }
 
+    public function commentaires()
+    {
+        return $this->hasMany(Commentaire::class, 'id_article');
+    }
+
 
 
 }  

@@ -7,6 +7,7 @@ use App\Http\Controllers\DashboardCMSController;
 use App\Http\Controllers\CreateSiteController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\CommentaireController;
 
 
 /*
@@ -31,6 +32,12 @@ Route::get('/blog/{id}', [BlogController::class, 'show'])->name('view-blog');
 
 Route::get('Article/{articleId}', [ArticleController::class, 'show'])->name('view-article');
 
+Route::get('/moderate-comments/{idArticle}', [CommentaireController::class, 'moderateComments'])->name('moderate-comments');
+
+Route::post('/approve-comment/{id}', [CommentaireController::class, 'approveComment'])->name('approve-comment');
+
+Route::post('/disapprove-comment/{id}', [CommentaireController::class, 'disapproveComment'])->name('disapprove-comment');
+
 
 Route::middleware(['web'])->group(function () {
     // Vos autres routes ici
@@ -51,7 +58,7 @@ Route::get('/create-article/{blog}', [ArticleController::class, 'create'])->name
 
 Route::post('/store-article/{blog}', [ArticleController::class, 'store'])->name('store-article');
 
-
+Route::post('/comment/store', [CommentaireController::class, 'store'])->name('comment.store');
 
 Route::get('/dashboard', [DashboardCMSController::class, 'index'])->name('dashboard');
 
