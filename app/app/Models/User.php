@@ -61,6 +61,14 @@ class User extends Authenticatable
      *
      * @return array<string, string>
      */
+<<<<<<< HEAD
+    protected function casts(): array
+    {
+        return [
+            'email_verified_at' => 'datetime',
+            'password' => 'hashed',
+        ];
+=======
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
@@ -83,5 +91,6 @@ class User extends Authenticatable
     public function blogs()
     {
         return $this->hasMany(Blog::class, 'mail_compte', 'mail_compte');
+>>>>>>> 972a3f6526317b591fa8497ad58c4f7508f8b327
     }
 }
