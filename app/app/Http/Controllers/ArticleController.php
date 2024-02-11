@@ -43,4 +43,20 @@ class ArticleController extends Controller
         return redirect()->route('view-blog', ['id' => $blogId])->with('success', 'Article créé avec succès.');
     }
 
+    public function destroy($articleId)
+    {
+
+        $articleId = Article::findOrFail($articleId);
+        // Vérifiez si l'article existe
+        if (!$articleId) {
+            return redirect()->route('dashboard')->with('error', 'L\'article n\'existe pas.');
+        }
+
+
+        $articleId->delete();
+
+        return redirect()->route('dashboard')->with('success', 'L\'article a été supprimé avec succès.');
+    }
+
+
 }  

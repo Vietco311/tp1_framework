@@ -30,6 +30,21 @@ Route::post('/store-site', [CreateSiteController::class, 'store'])->name('store-
 Route::get('/blog/{id}', [BlogController::class, 'show'])->name('view-blog');
 
 
+
+Route::middleware(['web'])->group(function () {
+    // Vos autres routes ici
+
+    Route::delete('/delete-article/{id}', [ArticleController::class, 'destroy'])->name('delete-article');
+
+    Route::post('/check-password', [BlogController::class, 'checkPassword'])->name('check-password');
+
+    // Route pour la suppression du blog
+    Route::delete('/delete-blog/{id}', [BlogController::class, 'destroy'])->name('delete-blog');
+});
+
+Route::get('/edit-blog/{id}', [BlogController::class, 'edit'])->name('edit-blog');
+
+
 Route::get('/create-article/{blog}', [ArticleController::class, 'create'])->name('create-article');
 
 
