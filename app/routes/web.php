@@ -29,6 +29,7 @@ Route::post('/store-site', [CreateSiteController::class, 'store'])->name('store-
 
 Route::get('/blog/{id}', [BlogController::class, 'show'])->name('view-blog');
 
+Route::get('Article/{articleId}', [ArticleController::class, 'show'])->name('view-article');
 
 
 Route::middleware(['web'])->group(function () {

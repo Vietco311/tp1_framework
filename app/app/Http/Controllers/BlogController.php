@@ -6,17 +6,21 @@ use App\Models\Article;
 
 class BlogController extends Controller
 {
-    public function show($id)
-    {
-        $blog = Blog::findOrFail($id);
-        $couleur = $blog->couleur_blog;
-        return view('blogs.show', ['blog' => $blog, 'couleur' => $couleur]);
-    }
+    
 
     public function articles()
     {
         return $this->hasMany(Article::class, 'id_blog');
     }
+
+    public function show($id)
+{
+    $blog = Blog::findOrFail($id);
+    $couleur = $blog->couleur_blog;
+    $articles = $blog->articles()->get(); // Exécutez la relation pour obtenir les articles
+    return view('blogs.show', ['blog' => $blog, 'couleur' => $couleur, 'articles' => $articles]);
+}
+
 
     public function checkPassword(Request $request)
     {

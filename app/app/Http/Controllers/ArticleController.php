@@ -8,6 +8,7 @@ use App\Models\Article;
 
 class ArticleController extends Controller
 {
+
     public function create($blogId)
     {
         $blog = Blog::findOrFail($blogId);
@@ -57,6 +58,18 @@ class ArticleController extends Controller
 
         return redirect()->route('dashboard')->with('success', 'L\'article a été supprimé avec succès.');
     }
+
+    public function blog()
+    {
+        return $this->belongsTo(Blog::class, 'id_blog');
+    }
+
+    public function show($articleId)
+    {
+        $article = Article::findOrFail($articleId);
+        return view('blogs.showarticle', ['article' => $article, 'blog'=> $article->blog, 'articles' => $article->blog->articles]);
+    }
+
 
 
 }  

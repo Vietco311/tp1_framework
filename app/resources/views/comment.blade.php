@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Accueil</title>
     <link rel="stylesheet" href="{{ asset('css/menu/comment.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/couleur/vintage.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/couleur/' . $blog->couleur_blog . '.css') }}">
     <x-head.tinymce-config-comment />
 
     <!-- Inclure tes fichiers CSS, scripts, etc. ici -->
