@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AccueilBackController;
 use App\Http\Controllers\DashboardCMSController;
 use App\Http\Controllers\CreateSiteController;
+use App\Http\Controllers\BlogController;
 
 
 /*
@@ -24,6 +25,8 @@ Route::middleware(['auth'])->group(function () {
 
 Route::get('/create-site', [CreateSiteController::class, 'index'])->name('create-site');
 Route::post('/store-site', [CreateSiteController::class, 'store'])->name('store-site');
+
+Route::get('/blog/{id}', [BlogController::class, 'show'])->name('view-blog');
 
 
 

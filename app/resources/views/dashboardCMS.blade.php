@@ -28,7 +28,8 @@
                                 <p class="card-text">Couleur: {{ $blog->couleur_blog }}</p>
                                 <p class="card-text">Template: {{ $blog->template_blog }}</p>
                                 <!-- Ajoutez d'autres informations du blog ici -->
-                                <a href="#" class="btn btn-primary">Voir le blog</a>
+                                <a href="{{ route('view-blog', ['id' => $blog->id_blog]) }}" class="btn btn-primary">Voir le blog</a>
+
                             </div>
                         </div>
                     </div>
