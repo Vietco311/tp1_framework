@@ -1,0 +1,68 @@
+* {
+    color: #ecdddd;
+}
+
+
+body {
+    background-color: #be3939; 
+}
+
+header {
+    background-color: #8b0c0c;
+}
+
+nav {
+    background-color: #8b0c0c;
+}
+
+.menu-button {
+    background-color: #8b0c0c;
+}
+
+.horizontal-button:hover {
+    background-color: #a83131;
+}
+
+.burger-button:hover {
+    color: #887f7f;
+}
+
+.vertical-button:hover {
+    background-color: #a83131;
+}
+
+.page-container {
+    background-color: rgb(139, 36, 36, 0.7);
+}
+
+.titre-acceuil {
+    background-color: #8b0c0c;
+}
+
+.comment-section {
+    background-color: #8b0c0c;
+}
+
+.comment-list {
+    border-color: #ecdddd;
+}
+
+.submit-comment {
+    background-color: #be3939;
+}
+
+.submit-comment:hover{
+    background-color: #c06363;
+}
+
+.section-article{
+    background-color: rgb(226, 204, 204);
+}
+
+.titre-page{
+    color: #1f1d1d;
+}
+
+p {
+    color: #1f1d1d;
+}
