@@ -17,6 +17,7 @@ class Commentaire extends Model
         'id_article',
         'pseudo_commentaire',
         'contenu_commentaire',
+        'etat_commentaire',
     ];
 
     public function article()

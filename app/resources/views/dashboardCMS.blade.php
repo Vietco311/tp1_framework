@@ -61,6 +61,9 @@
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm">Supprimer</button>
                                                 </form>
+                                                <form action="{{ route('blogs.moderatecomments', ['idArticle' => $article->id_article]) }}" method="GET" style="display: inline;">
+                                                    <button type="submit" class="btn btn-primary btn-sm">Modérer les commentaires</button>
+                                                </form>
                                             </li>
                                         @endforeach
                                     </ul>
