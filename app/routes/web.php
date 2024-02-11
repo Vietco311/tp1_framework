@@ -6,6 +6,7 @@ use App\Http\Controllers\AccueilBackController;
 use App\Http\Controllers\DashboardCMSController;
 use App\Http\Controllers\CreateSiteController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\ArticleController;
 
 
 /*
@@ -27,6 +28,12 @@ Route::get('/create-site', [CreateSiteController::class, 'index'])->name('create
 Route::post('/store-site', [CreateSiteController::class, 'store'])->name('store-site');
 
 Route::get('/blog/{id}', [BlogController::class, 'show'])->name('view-blog');
+
+
+Route::get('/create-article/{blog}', [ArticleController::class, 'create'])->name('create-article');
+
+
+Route::post('/store-article/{blog}', [ArticleController::class, 'store'])->name('store-article');
 
 
 
@@ -54,15 +61,15 @@ Route::get('/acceuil', function () {
 });
 
 Route::get('/burger', function () {
-    return view('burger');
+    return view('templates/burger');
 });
 
 Route::get('/horizontal', function () {
-    return view('horizontal');
+    return view('templates/horizontal');
 });
 
-Route::get('/vert-gauche', function () {
-    return view('vertgauche');
+Route::get('/verticale', function () {
+    return view('templates/verticale');
 });
 
 Route::get('/page-example', function () {

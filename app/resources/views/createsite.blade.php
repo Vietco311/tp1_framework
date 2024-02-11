@@ -30,16 +30,16 @@
 
             <label for="couleur_blog">Couleur du blog:</label>
             <select name="couleur_blog">
-                <option value="Bordeau">Bordeau</option>
-                <option value="Marin">Marin</option>
-                <option value="Vintage">Vintage</option>
+                <option value="bordeau">Bordeau</option>
+                <option value="marin">Marin</option>
+                <option value="vintage">Vintage</option>
             </select>
 
             <label for="template_blog">Template du blog:</label>
             <select name="template_blog">
-                <option value="Burger">Burger</option>
-                <option value="Horizontal">Horizontal</option>
-                <option value="Vertical">Vertical</option>
+                <option value="burger">Burger</option>
+                <option value="horizontal">Horizontal</option>
+                <option value="verticale">Vertical</option>
             </select>
 
             <button type="submit" class="btn btn-primary">Créer le blog</button>

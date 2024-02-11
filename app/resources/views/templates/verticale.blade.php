@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menu Verticale Gauche</title>
     <link rel="stylesheet" href="{{ asset('css/menu/vertgauche.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/couleur/vintage.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/couleur/' . $couleur . '.css') }}">
     <!-- Ajoute tes liens CSS ici -->
 </head>
 <body>

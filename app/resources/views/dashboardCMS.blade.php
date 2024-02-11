@@ -29,6 +29,8 @@
                                 <p class="card-text">Template: {{ $blog->template_blog }}</p>
                                 <!-- Ajoutez d'autres informations du blog ici -->
                                 <a href="{{ route('view-blog', ['id' => $blog->id_blog]) }}" class="btn btn-primary">Voir le blog</a>
+                                <a href="{{ route('create-article', ['blog' => $blog->id_blog]) }}" class="btn btn-success">Créer un article</a>
+
 
                             </div>
                         </div>

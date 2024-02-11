@@ -6,7 +6,7 @@
     <title>@yield('title')</title>
     <!-- Ajoute tes liens CSS ici -->
     <link rel="stylesheet" href="{{ asset('css/menu/horizontal.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/couleur/vintage.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/couleur/' . $couleur . '.css') }}">
 </head>
 <body>
     <header>
@@ -16,8 +16,8 @@
                 <li class="button-container"><button class="menu-button horizontal-button" href="#">Accueil</button></li>
                 <li class="button-container"><button class="menu-button horizontal-button" href="#">Page 1</button></li>
                 <li class="button-container"><button class="menu-button horizontal-button" href="#">Page 2</button></li>
-                <!-- Ajoute d'autres éléments du menu selon tes besoins -->
             </ul>
+                <!-- Ajoute d'autres éléments du menu selon tes besoins -->
         </nav>
     </header>
 

@@ -5,18 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title')</title>
     <link rel="stylesheet" href="{{ asset('css/menu/burger.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/couleur/marin.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/couleur/' . $couleur . '.css') }}">
 </head>
-<body>
-    <header>
+<body><header>
         <!-- Contenu de l'en-tête -->
         <div class="burger-menu" onclick="toggleMenu()">☰</div>
         <nav class="hide">
             <!-- Menu burger -->
             <ul>
-                <li><button class="menu-button burger-button" href="/">Accueil</button></li>
-                <li><button class="menu-button burger-button" href="/page-example">Page 1</button></li>
-                <li><button class="menu-button burger-button" href="#">Page 2</button></li>
+                <li><a class="menu-button burger-button" href="/">Accueil</a></li>
+                <li><a class="menu-button burger-button" href="/page-example">Page 1</a></li>
+                <li><a class="menu-button burger-button" href="#">Page 2</a></li>
                 <!-- Ajoute d'autres éléments du menu selon tes besoins -->
             </ul>
         </nav>
