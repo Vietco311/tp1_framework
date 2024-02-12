@@ -8,7 +8,6 @@
     <link rel="styleshhet" href="{{ asset('css/police/open-sans.css') }}">
 
 </head>
-@include('templates/burger')
 <body>
     @include('templates/'. $blog->template_blog) 
     <div class="base-container">

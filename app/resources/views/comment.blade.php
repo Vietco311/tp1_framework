@@ -41,11 +41,13 @@
 <div class="comment-form">
     <h3>Ajouter un commentaire</h3>
 
-    <form method="post" action="{{ route('comment.store') }}">
+    
         @csrf
         @if(isset($article))
+        <form method="post" action="{{ route('comment.store') }}">
             <input type="hidden" name="id_article" value="{{ $article->id_article }}">
         @elseif(isset($blog))
+        <form method="post" action="{{ route('commentBlog.store') }}">
             <input type="hidden" name="id_blog" value="{{ $blog->id_blog }}">
         @endif
 

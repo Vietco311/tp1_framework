@@ -7,6 +7,11 @@
     <!-- Ajoute tes liens CSS ici -->
     <link rel="stylesheet" href="{{ asset('css/menu/horizontal.css') }}">
     <link rel="stylesheet" href="{{ asset('css/couleur/' . $couleur . '.css') }}">
+    <style>
+        * {
+            border-color : $blog->couleur_separation_blog;
+        }
+    </style>
 </head>
 <body>
     <header>
