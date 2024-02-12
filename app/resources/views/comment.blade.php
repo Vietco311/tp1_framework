@@ -60,8 +60,23 @@
                     <textarea name="contenu_commentaire" class="form-control" required></textarea>
                 </div>
 
-                <button type="submit" class="btn btn-primary">Ajouter le commentaire</button>
-            </form>
+<!-- Formulaire pour ajouter un nouveau commentaire -->
+<div class="comment-form">
+    <h3>Ajouter un commentaire</h3>
+
+    
+        @csrf
+        @if(isset($article))
+        <form method="post" action="{{ route('comment.store') }}">
+            <input type="hidden" name="id_article" value="{{ $article->id_article }}">
+        @elseif(isset($blog))
+        <form method="post" action="{{ route('commentBlog.store') }}">
+            <input type="hidden" name="id_blog" value="{{ $blog->id_blog }}">
+        @endif
+
+        <div class="form-group">
+            <label for="pseudo_commentaire">Nom de l'auteur:</label>
+            <input type="text" name="pseudo_commentaire" class="form-control" required>
         </div>
 
 

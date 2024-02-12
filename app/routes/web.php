@@ -60,6 +60,10 @@ Route::post('/store-article/{blog}', [ArticleController::class, 'store'])->name(
 
 Route::post('/comment/store', [CommentaireController::class, 'store'])->name('comment.store');
 
+// Ajoutez également la route pour CommentaireBlogController si nécessaire
+Route::post('/commentBlog/store', [CommentaireBlogController::class, 'store'])->name('commentBlog.store');
+
+
 Route::get('/dashboard', [DashboardCMSController::class, 'index'])->name('dashboard');
 
 
