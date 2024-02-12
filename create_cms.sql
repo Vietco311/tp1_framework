@@ -13,6 +13,7 @@ Create table compte (
     url_blog VARCHAR(255) NOT NULL,
     couleur_blog VARCHAR(255) NOT NULL,
     couleur_separation_blog VARCHAR(255) NOT NULL,
+    taille_separation_blog VARCHAR(255) NOT NULL,
     template_blog VARCHAR(255) NOT NULL,
     image_blog VARCHAR(255) NOT NULL,
     sujet_blog VARCHAR(255),

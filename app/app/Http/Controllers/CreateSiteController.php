@@ -20,6 +20,7 @@ class CreateSiteController extends Controller
         'sujet_blog' => 'nullable|string|max:255',
         'couleur_blog' => 'required|string|max:255', 
         'couleur_separation_blog' => 'required|string|max:255',
+        'taille_separation_blog' => 'required|string|max:255',
         'template_blog' => 'nullable|string|max:255', 
         // Ajoutez d'autres règles de validation si nécessaire
     ]);
@@ -32,6 +33,7 @@ class CreateSiteController extends Controller
         'sujet_blog' => $request->input('sujet_blog'),
         'couleur_blog' => $request->input('couleur_blog'),
         'couleur_separation_blog' => $request->input('couleur_separation_blog'),
+        'taille_separation_blog' => $request->input('taille_separation_blog'),
         'template_blog' => $request->input('template_blog'),
     ]);
 

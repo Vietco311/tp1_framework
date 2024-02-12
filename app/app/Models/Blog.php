@@ -20,6 +20,7 @@ class Blog extends Model
         'url_blog',
         'couleur_blog',
         'couleur_separation_blog',
+        'taille_separation_blog',
         'template_blog',
         'image_blog',
         'sujet_blog',

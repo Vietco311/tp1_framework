@@ -42,6 +42,9 @@
                 <option value="vintage">Vintage</option>
             </select>
 
+            <label for="taille_separation_blog">Taille des séparations:</label>
+            <input type="text" name="taille_separation_blog">
+
             <label for="template_blog">Template du blog:</label>
             <select name="template_blog">
                 <option value="burger">Burger</option>
