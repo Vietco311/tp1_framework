@@ -6,6 +6,11 @@
     <title>@yield('title')</title>
     <link rel="stylesheet" href="{{ asset('css/menu/burger.css') }}">
     <link rel="stylesheet" href="{{ asset('css/couleur/' . $blog->couleur_blog . '.css') }}">
+    <style>
+        * {
+            border-color : $blog->couleur_separation_blog;
+        }
+    </style>
 </head>
 <body><header>
         <!-- Contenu de l'en-tête -->

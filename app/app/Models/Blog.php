@@ -19,7 +19,9 @@ class Blog extends Model
         'nom_blog',
         'url_blog',
         'couleur_blog',
+        'couleur_separation_blog',
         'template_blog',
+        'image_blog',
         'sujet_blog',
     ];
 
@@ -31,5 +33,10 @@ class Blog extends Model
     public function articles()
     {
         return $this->hasMany(Article::class, 'id_blog', 'id_blog');
+    }
+
+    public function comms()
+    {
+        return $this->hasMany(CommentaireBlog::class, 'id_blog');
     }
 }

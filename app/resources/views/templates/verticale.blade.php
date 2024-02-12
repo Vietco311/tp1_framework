@@ -13,10 +13,10 @@
         <nav>
             <!-- Menu vertical gauche -->
             <ul>
-                <li class="button-container"><button class="menu-button vertical-button" href="#">Accueil</button></li>
-                <li class="button-container"><button class="menu-button vertical-button" href="#">Page 1</button></li>
-                <li class="button-container"><button class="menu-button vertical-button" href="#">Page 2</button></li>
-                <!-- Ajoute d'autres éléments du menu selon tes besoins -->
+                <li class="button-container"><button class="menu-button horizontal-button" href="{{ route('view-article', ['articleId' => $article->id_article]) }}">Accueil</button></li>
+            @foreach ($articles as $article)
+                <li class="button-container"><button class="menu-button horizontal-button" href="{{ route('view-article', ['articleId' => $article->id_article]) }}">{{ $article->nom_article }}</button></li>
+            @endforeach
             </ul>
         </nav>
     </header>

@@ -1,1 +1,1 @@
-@include('templates.' . $blog->template_blog)
+@include('acceuil')

@@ -18,8 +18,9 @@ class CreateSiteController extends Controller
         'nom_blog' => 'required|string|max:255',
         'url_blog' => 'required|url|max:255',
         'sujet_blog' => 'nullable|string|max:255',
-        'couleur_blog' => 'nullable|string|max:255', // Ajout de la règle de validation pour la couleur
-        'template_blog' => 'nullable|string|max:255', // Ajout de la règle de validation pour le template
+        'couleur_blog' => 'required|string|max:255', 
+        'couleur_separation_blog' => 'required|string|max:255',
+        'template_blog' => 'nullable|string|max:255', 
         // Ajoutez d'autres règles de validation si nécessaire
     ]);
 
@@ -30,8 +31,8 @@ class CreateSiteController extends Controller
         'url_blog' => $request->input('url_blog'),
         'sujet_blog' => $request->input('sujet_blog'),
         'couleur_blog' => $request->input('couleur_blog'),
+        'couleur_separation_blog' => $request->input('couleur_separation_blog'),
         'template_blog' => $request->input('template_blog'),
-        // Ajoutez d'autres champs du modèle Blog au besoin
     ]);
 
     return redirect()->route('dashboard')->with('success', 'Le blog a été créé avec succès!');

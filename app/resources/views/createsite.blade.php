@@ -35,6 +35,13 @@
                 <option value="vintage">Vintage</option>
             </select>
 
+            <label for="couleur_separation_blog">Couleur des séparations:</label>
+            <select name="couleur_separation_blog">
+                <option value="bordeau">Bordeau</option>
+                <option value="marin">Marin</option>
+                <option value="vintage">Vintage</option>
+            </select>
+
             <label for="template_blog">Template du blog:</label>
             <select name="template_blog">
                 <option value="burger">Burger</option>

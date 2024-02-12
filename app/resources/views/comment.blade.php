@@ -7,13 +7,16 @@
     <link rel="stylesheet" href="{{ asset('css/couleur/' . $blog->couleur_blog . '.css') }}">
     <x-head.tinymce-config-comment />
 
-    <!-- Inclure tes fichiers CSS, scripts, etc. ici -->
+
 </head>
 <div class="comment-section">
     <h2>Commentaires</h2>
-
+    
     <!-- Liste des commentaires -->
     <ul class="comment-list">
+    <!-- Liste des commentaires -->
+<ul class="comment-list">
+    @if(isset($article))
         @foreach($article->commentaires as $commentaire)
             <li class="comment">
                 <div class="comment-author">{{ $commentaire->pseudo_commentaire }}</div>
@@ -22,31 +25,44 @@
                 </div>
             </li>
         @endforeach
+    @elseif(isset($blog))
+        @foreach($comms as $commentaire)
+            <li class="comment">
+                <div class="comment-author">{{ $commentaire->pseudo_commentaire_blog }}</div>
+                <div class="comment-content">
+                    {{ $commentaire->contenu_commentaire_blog }}
+                </div>
+            </li>
+        @endforeach
+    @endif
     </ul>
 
-
-    <!-- Formulaire pour ajouter un nouveau commentaire -->
-    <div class="comment-form">
+<!-- Formulaire pour ajouter un nouveau commentaire -->
+<div class="comment-form">
     <h3>Ajouter un commentaire</h3>
-    
+
     <form method="post" action="{{ route('comment.store') }}">
         @csrf
-        <input type="hidden" name="id_article" value="{{ $article->id_article }}">
-        
+        @if(isset($article))
+            <input type="hidden" name="id_article" value="{{ $article->id_article }}">
+        @elseif(isset($blog))
+            <input type="hidden" name="id_blog" value="{{ $blog->id_blog }}">
+        @endif
+
         <div class="form-group">
             <label for="pseudo_commentaire">Nom de l'auteur:</label>
             <input type="text" name="pseudo_commentaire" class="form-control" required>
         </div>
-        
+
         <div class="form-group">
             <label for="contenu_commentaire">Contenu du commentaire:</label>
-            <textarea name="contenu_commentaire" class="form-control" required>
-            </textarea>
+            <textarea name="contenu_commentaire" class="form-control" required></textarea>
         </div>
-        
+
         <button type="submit" class="btn btn-primary">Ajouter le commentaire</button>
     </form>
 </div>
+
 
 
 </div>
