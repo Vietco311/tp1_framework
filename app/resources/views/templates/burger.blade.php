@@ -7,8 +7,9 @@
     <link rel="stylesheet" href="{{ asset('css/menu/burger.css') }}">
     <link rel="stylesheet" href="{{ asset('css/couleur/' . $blog->couleur_blog . '.css') }}">
     <style>
-        * {
-            border-color : $blog->couleur_separation_blog;
+        .intersection {
+            height: 50px; /* valeur variable dans le dashboard */
+            background-color : #ffffff; /* valeur variable dans le dashboard */
         }
     </style>
 </head>

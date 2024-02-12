@@ -7,6 +7,7 @@
 }
 
 .base-container{
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -32,13 +33,13 @@ li {
     color: white;
 }
 
-.titre-page {
+.titre-blog {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
-.titre-image{
+.blog-image{
     width: 600px;
 }

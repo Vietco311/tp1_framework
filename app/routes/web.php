@@ -87,6 +87,15 @@ Route::get('/burger', function () {
     return view('templates/burger');
 });
 
+Route::get('/titre-site', function () {
+    return view('titre-site');
+});
+
+Route::get('/intersection', function () {
+    return view('components/intersection');
+});
+
+
 Route::get('/horizontal', function () {
     return view('templates/horizontal');
 });
