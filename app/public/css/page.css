@@ -25,3 +25,20 @@ li {
 .button-container{
     padding: 0
 }
+
+.titre-container{
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.titre-page {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.titre-image{
+    width: 600px;
+}

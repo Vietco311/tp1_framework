@@ -6,11 +6,11 @@
     <title>Accueil</title>
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('css/couleur/marin.css') }}">
-    <link rel="styleshhet" href="{{ asset('css/police/open-sans.css') }}"
+    <link rel="styleshhet" href="{{ asset('css/police/open-sans.css') }}">
 
     <!-- Inclure tes fichiers CSS, scripts, etc. ici -->
 </head>
-
+@include('templates/burger')
 <body>
 
     <div class="base-container">

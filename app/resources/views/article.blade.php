@@ -6,6 +6,7 @@
     <title>Accueil</title>
     <link rel="stylesheet" href="{{ asset('css/page.css') }}">
     <link rel="stylesheet" href="{{ asset('css/couleur/' . $blog->couleur_blog . '.css') }}">
+    <link rel="stylesheet" href="{{ asset(('police/montserrat.css'))}}">
 
     <!-- Inclure tes fichiers CSS, scripts, etc. ici -->
 </head>
@@ -13,8 +14,11 @@
 <body>
     @include('templates.' . $blog->template_blog)
     <div class="base-container">  
-        <div class="section-article">
-            <h1 class="titre-page">{{ $article->nom_article }}</h1>
+        <div class="section-article">    
+            <div class="titre-container">   
+                <img class="titre-image" src="{{ asset('image/banniere.png')}}"/>
+                <h1 class="titre-page">{{ $article->nom_article }}</h1>
+            </div>         
             <p class="auteur-article">Auteur: {{ $article->auteur_article }}</p>
             <img src="{{ asset('storage/' . $article->image_article) }}" alt="Image de l'article" class="image-article">
             <p class="date-article">Date de publication: {{ $article->date_article }}</p>
