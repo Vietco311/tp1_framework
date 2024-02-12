@@ -45,6 +45,13 @@
             <label for="taille_separation_blog">Taille des séparations:</label>
             <input type="text" name="taille_separation_blog">
 
+            <label for="image_blog">Image du titre du blog:</label>
+            <select name="image_blog">
+                <option value="image1">Image 1</option>
+                <option value="image2">Image 2</option>
+                <option value="image3">Image 3</option>
+            </select>
+
             <label for="template_blog">Template du blog:</label>
             <select name="template_blog">
                 <option value="burger">Burger</option>
