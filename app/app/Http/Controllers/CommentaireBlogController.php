@@ -23,13 +23,11 @@ class CommentaireBlogController extends Controller
             'id_blog' => 'required|exists:blogs,id_blog',
             'pseudo_commentaire_blog' => 'required|string|max:255',
             'contenu_commentaire_blog' => 'required|string',
-            // Vous pouvez ajouter d'autres règles de validation au besoin
         ]);
 
         // Création du commentaire
         CommentaireBlog::create($validatedData);
 
-        // Redirection ou autre logique après l'ajout du commentaire
         return redirect()->back()->with('success', 'Commentaire ajouté avec succès');
     }
 
