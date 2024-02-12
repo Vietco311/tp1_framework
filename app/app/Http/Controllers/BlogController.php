@@ -14,12 +14,13 @@ class BlogController extends Controller
     }
 
     public function show($id)
-{
-    $blog = Blog::findOrFail($id);
-    $couleur = $blog->couleur_blog;
-    $articles = $blog->articles()->get(); // Exécutez la relation pour obtenir les articles
-    return view('blogs.show', ['blog' => $blog, 'couleur' => $couleur, 'articles' => $articles]);
-}
+    {
+        $blog = Blog::findOrFail($id);
+        $couleur = $blog->couleur_blog;
+        $articles = $blog->articles()->get();
+        $comms = $blog->comms()->get();
+        return view('blogs.show', ['blog' => $blog, 'couleur' => $couleur, 'articles' => $articles, 'comms' => $comms]);
+    }
 
 
     public function checkPassword(Request $request)

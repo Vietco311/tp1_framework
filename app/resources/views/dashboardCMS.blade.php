@@ -35,6 +35,7 @@
                                 <p class="card-text">URL: {{ $blog->url_blog }}</p>
                                 <p class="card-text">Sujet: {{ $blog->sujet_blog }}</p>
                                 <p class="card-text">Couleur: {{ $blog->couleur_blog }}</p>
+                                <p class="card-text">Couleur des séparations : {{ $blog->couleur_separation_blog}}</p>
                                 <p class="card-text">Template: {{ $blog->template_blog }}</p>
 
                                 <!-- Ajoutez d'autres informations du blog ici -->
@@ -61,7 +62,7 @@
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm">Supprimer</button>
                                                 </form>
-                                                <form action="{{ route('blogs.moderatecomments', ['idArticle' => $article->id_article]) }}" method="GET" style="display: inline;">
+                                                <form action="{{ route('moderate-comments', ['idArticle' => $article->id_article]) }}" method="GET" style="display: inline;">
                                                     <button type="submit" class="btn btn-primary btn-sm">Modérer les commentaires</button>
                                                 </form>
                                             </li>
