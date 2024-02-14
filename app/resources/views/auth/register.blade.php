@@ -42,6 +42,14 @@
                             </div>
 
                             <div class="form-group row">
+                                <label for="mdp_compte_confirmation" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
+
+                                <div class="col-md-6">
+                                    <input id="mdp_compte_confirmation" type="password" class="form-control" name="mdp_compte_confirmation" required autocomplete="new-password">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
                                 <label for="nom_compte" class="col-md-4 col-form-label text-md-right">{{ __('Last Name') }}</label>
 
                                 <div class="col-md-6">
