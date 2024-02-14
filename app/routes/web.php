@@ -62,6 +62,11 @@ Route::post('/store-article/{blog}', [ArticleController::class, 'store'])->name(
 Route::post('/comment/store', [CommentaireController::class, 'store'])->name('comment-store');
 
 
+Route::get('/blog/{id}/edit', [BlogController::class, 'edit'])->name('blog.edit');
+
+Route::put('/blog/{id}', [BlogController::class, 'update'])->name('blog.update');
+
+
 // Ajoutez également la route pour CommentaireBlogController si nécessaire
 Route::post('/commentBlog/store', [CommentaireBlogController::class, 'store'])->name('commentBlog.store');
 

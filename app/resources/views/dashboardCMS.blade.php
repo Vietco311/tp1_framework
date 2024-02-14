@@ -36,6 +36,7 @@
                                 <p class="card-text">Sujet: {{ $blog->sujet_blog }}</p>
                                 <p class="card-text">Couleur: {{ $blog->couleur_blog }}</p>
                                 <p class="card-text">Couleur des séparations : {{ $blog->couleur_separation_blog}}</p>
+                                <p class="card-text">Taille des séparations : {{ $blog->taille_separation_blog}}</p>
                                 <p class="card-text">Template: {{ $blog->template_blog }}</p>
 
                                 <!-- Ajoutez d'autres informations du blog ici -->
