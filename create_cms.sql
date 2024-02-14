@@ -10,7 +10,7 @@ Create table compte (
     id_blog INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
     mail_compte VARCHAR(255) NOT NULL,
     nom_blog VARCHAR(255) NOT NULL,
-    url_blog VARCHAR(255) NOT NULL,
+    url_blog VARCHAR(255)  UNIQUE,
     couleur_blog VARCHAR(255) NOT NULL,
     couleur_separation_blog VARCHAR(255) NOT NULL,
     taille_separation_blog VARCHAR(255) NOT NULL,
