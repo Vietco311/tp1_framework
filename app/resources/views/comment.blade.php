@@ -42,31 +42,6 @@
 <div class="comment-form">
     <h3>Ajouter un commentaire</h3>
 
-    
-       
-        @if(isset($article))
-        <form method="post" action="{{ route('comment.store') }}">
-        @csrf
-            <input type="hidden" name="id_article" value="{{ $article->id_article }}">
-        @elseif(isset($blog))
-        <form method="post" action="{{ route('commentBlog.store') }}">
-        @csrf
-            <input type="hidden" name="id_blog" value="{{ $blog->id_blog }}">
-        @endif
-
-        <div class="form-group">
-            <label for="pseudo_commentaire">Nom de l'auteur:</label>
-            <input type="text" name="pseudo_commentaire" class="form-control" required>
-        </div>
-
-        <div class="form-group">
-            <label for="contenu_commentaire">Contenu du commentaire:</label>
-            <textarea name="contenu_commentaire" class="form-control" required></textarea>
-
-        <button class="btn btn-primary" type="submit">Ajouter le commentaire</button>
-    </form>
-    
+            @include('components/forms/tinymce-comment')
 
 
-
-</div>

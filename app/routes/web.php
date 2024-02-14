@@ -8,6 +8,7 @@ use App\Http\Controllers\CreateSiteController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\CommentaireController;
+use App\Http\Controllers\CommentaireBlogController;
 
 
 /*
@@ -58,7 +59,7 @@ Route::get('/create-article/{blog}', [ArticleController::class, 'create'])->name
 
 Route::post('/store-article/{blog}', [ArticleController::class, 'store'])->name('store-article');
 
-Route::post('/comment/store', [CommentaireController::class, 'store'])->name('comment.store');
+Route::post('/comment/store', [CommentaireController::class, 'store'])->name('comment-store');
 
 
 // Ajoutez également la route pour CommentaireBlogController si nécessaire
@@ -115,6 +116,10 @@ Route::get('/page-example', function () {
 
 Route::get('/ecrire-page', function () {
     return view('writingpage');
+});
+
+Route::get('/comment', function () {
+    return view('component/forms/tinymce-comment');
 });
 
 //Auth::routes();
