@@ -20,7 +20,9 @@ class BlogController extends Controller
         $couleur = $blog->couleur_blog;
         $articles = $blog->articles()->get();
         $comms = $blog->comms()->get();
-        return view('blogs.show', ['blog' => $blog, 'couleur' => $couleur, 'articles' => $articles, 'comms' => $comms]);
+        $commentsApprouve = $blog->comms()->where('etat_commentaire_blog', true)->get();
+
+        return view('blogs.show', ['blog' => $blog, 'couleur' => $couleur, 'articles' => $articles, 'comms' => $comms, 'commentsApprouve' => $commentsApprouve]);
     }
 
 
@@ -92,6 +94,11 @@ public function update(Request $request, $id)
 
     return redirect()->route('dashboard')->with('success', 'Paramètres du blog mis à jour avec succès!');
 }
+
+public function comms()
+    {
+        return $this->hasMany(CommentaireBlog::class, 'id_blog');
+    }
 
 
 

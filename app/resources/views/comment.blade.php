@@ -16,7 +16,7 @@
     <!-- Liste des commentaires -->
     <ul class="comment-list">
         @if (isset($article))
-            @foreach ($article->commentaires as $commentaire)
+            @foreach ($commentsApprouve as $commentaire)
                 <li class="comment">
                     <div class="comment-author">{{ $commentaire->pseudo_commentaire }}</div>
                     <div class="comment-content">
@@ -25,11 +25,11 @@
                 </li>
             @endforeach
         @elseif(isset($blog))
-            @foreach ($comms as $commentaire)
+            @foreach ($commentsApprouve as $commentaire)
                 <li class="comment">
                     <div class="comment-author">{{ $commentaire->pseudo_commentaire_blog }}</div>
                     <div class="comment-content">
-                        {{ $commentaire->contenu_commentaire_blog }}
+                        {!! $commentaire->contenu_commentaire_blog !!}
                     </div>
                 </li>
             @endforeach

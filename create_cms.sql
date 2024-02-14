@@ -37,6 +37,7 @@ Create table compte (
     id_article INT NOT NULL,
     pseudo_commentaire VARCHAR(255) NOT NULL,
     contenu_commentaire TEXT NOT NULL,
+    etat_commentaire BOOLEAN DEFAULT TRUE,
     date_commentaire TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (id_article) REFERENCES article(id_article)
     );
@@ -46,6 +47,7 @@ Create table compte (
     id_blog INT NOT NULL,
     pseudo_commentaire_blog VARCHAR(255) NOT NULL,
     contenu_commentaire_blog TEXT NOT NULL,
+    etat_commentaire_blog BOOLEAN DEFAULT TRUE,
     date_commentaire_blog TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (id_blog) REFERENCES blog(id_blog)
     );

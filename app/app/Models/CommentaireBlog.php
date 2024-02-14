@@ -19,6 +19,7 @@ class CommentaireBlog extends Model
         'pseudo_commentaire_blog',
         'contenu_commentaire_blog',
         'date_commentaire_blog',
+        'etat_commentaire_blog',
     ];
 
     protected $dates = [
