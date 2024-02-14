@@ -21,7 +21,7 @@
             <p class="auteur-article">Auteur: {{ $article->auteur_article }}</p>
             <img src="{{ asset('storage/' . $article->image_article) }}" alt="Image de l'article" class="image-article">
             <p class="date-article">Date de publication: {{ $article->date_article }}</p>
-            <p>
+            <p class="contenu-article">
                 {{ $article->contenu_article }}
             </p>
         </div>
