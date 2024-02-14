@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
+use Illuminate\Foundation\Auth\RegistersUsers;
 
 class AuthController extends Controller
 {
@@ -66,37 +67,30 @@ class AuthController extends Controller
      * @return \Illuminate\Http\RedirectResponse
      */
 
-public function register(Request $request)
-{
-    // Validation des champs du formulaire (à adapter selon vos besoins)
-    $request->validate([
-        'mail_compte' => 'required|email|unique:compte',
-        'mdp_compte' => 'required|min:6',
-        'nom_compte' => 'required',
-        'prenom_compte' => 'required',
-    ]);
+    public function register(Request $request)
+    {
+        $request->validate([
+            'mail_compte' => 'required|email|unique:compte',
+            'mdp_compte' => 'required|min:6|confirmed', // Ajout de la règle 'confirmed'
+            'nom_compte' => 'required',
+            'prenom_compte' => 'required',
+        ], [
+            'mdp_compte.confirmed' => 'Les mots de passe ne correspondent pas.',
+        ]);
 
-    // Création d'un nouvel utilisateur
-    $user = new \App\Models\User();
-    $user->mail_compte = $request->input('mail_compte');
-    $user->mdp_compte = Hash::make($request->input('mdp_compte')); // Assurez-vous de hasher le mot de passe
-    $user->nom_compte = $request->input('nom_compte');
-    $user->prenom_compte = $request->input('prenom_compte');
-    $user->save();
+        $user = new \App\Models\User();
+        $user->mail_compte = $request->input('mail_compte');
+        $user->mdp_compte = Hash::make($request->input('mdp_compte')); 
+        $user->nom_compte = $request->input('nom_compte');
+        $user->prenom_compte = $request->input('prenom_compte');
+        $user->save();
 
-    Auth::login($user);
+        Auth::login($user);
 
-    // Redirection vers la page de connexion après l'inscription
-    return redirect('/dashboard')->with('success');
-}
+        return redirect('/dashboard')->with('success');
+    }
 
 
-    /**
-     * Log the user out of the application.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\RedirectResponse
-     */
     public function logout(Request $request)
     {
         Auth::logout();

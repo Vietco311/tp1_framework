@@ -23,68 +23,69 @@ use App\Http\Controllers\CommentaireBlogController;
 */
 
 Route::middleware(['auth'])->group(function () {
-    Route::get('/dashboard', [DashboardCMSController::class, 'index']);
-});
 
-Route::get('/create-site', [CreateSiteController::class, 'index'])->name('create-site');
-Route::post('/store-site', [CreateSiteController::class, 'store'])->name('store-site');
+    Route::get('/dashboard', [DashboardCMSController::class, 'index'])->name('dashboard');
 
-Route::get('/blog/{id}', [BlogController::class, 'show'])->name('view-blog');
+    Route::get('/create-site', [CreateSiteController::class, 'index'])->name('create-site');
 
-Route::get('Article/{articleId}', [ArticleController::class, 'show'])->name('view-article');
+    Route::post('/store-site', [CreateSiteController::class, 'store'])->name('store-site');
 
-Route::get('/moderate-comments/{idArticle}', [CommentaireController::class, 'moderateComments'])->name('moderate-comments');
+    Route::get('/blog/{id}', [BlogController::class, 'show'])->name('view-blog');
 
-Route::post('/approve-comment/{id}', [CommentaireController::class, 'approveComment'])->name('approve-comment');
+    Route::get('Article/{articleId}', [ArticleController::class, 'show'])->name('view-article');
 
-Route::post('/disapprove-comment/{id}', [CommentaireController::class, 'disapproveComment'])->name('disapprove-comment');
+    Route::get('/moderate-comments/{idArticle}', [CommentaireController::class, 'moderateComments'])->name('moderate-comments');
 
+    Route::post('/approve-comment/{id}', [CommentaireController::class, 'approveComment'])->name('approve-comment');
 
-Route::middleware(['web'])->group(function () {
-    // Vos autres routes ici
+    Route::post('/disapprove-comment/{id}', [CommentaireController::class, 'disapproveComment'])->name('disapprove-comment');
 
     Route::delete('/delete-article/{id}', [ArticleController::class, 'destroy'])->name('delete-article');
 
     Route::post('/check-password', [BlogController::class, 'checkPassword'])->name('check-password');
 
-    // Route pour la suppression du blog
     Route::delete('/delete-blog/{id}', [BlogController::class, 'destroy'])->name('delete-blog');
+
+    Route::get('/edit-blog/{id}', [BlogController::class, 'edit'])->name('edit-blog');
+
+    Route::get('/create-article/{blog}', [ArticleController::class, 'create'])->name('create-article');
+
+    Route::post('/store-article/{blog}', [ArticleController::class, 'store'])->name('store-article');
+
+    Route::post('/comment/store', [CommentaireController::class, 'store'])->name('comment-store');
+
+    Route::get('/blog/{id}/edit', [BlogController::class, 'edit'])->name('blog.edit');
+
+    Route::put('/blog/{id}', [BlogController::class, 'update'])->name('blog.update');
+
+    Route::post('/commentBlog/store', [CommentaireBlogController::class, 'store'])->name('commentBlog.store');
+
+    Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
+    });
+
+
+
+
+
+
+Route::middleware(['web'])->group(function () {
+    // Vos autres routes ici
+
+    
 });
-
-Route::get('/edit-blog/{id}', [BlogController::class, 'edit'])->name('edit-blog');
-
-
-Route::get('/create-article/{blog}', [ArticleController::class, 'create'])->name('create-article');
-
-
-Route::post('/store-article/{blog}', [ArticleController::class, 'store'])->name('store-article');
-
-Route::post('/comment/store', [CommentaireController::class, 'store'])->name('comment-store');
-
-
-Route::get('/blog/{id}/edit', [BlogController::class, 'edit'])->name('blog.edit');
-
-Route::put('/blog/{id}', [BlogController::class, 'update'])->name('blog.update');
-
-
-// Ajoutez également la route pour CommentaireBlogController si nécessaire
-Route::post('/commentBlog/store', [CommentaireBlogController::class, 'store'])->name('commentBlog.store');
-
-
-Route::get('/dashboard', [DashboardCMSController::class, 'index'])->name('dashboard');
 
 
 Route::get('/', [AccueilBackController::class, 'index'])->name('welcome');
 
-
-// Routes d'authentification
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
-Route::post('/login', [AuthController::class, 'login']);
-Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
-// Routes d'inscription
+Route::post('/login', [AuthController::class, 'login']);
+
 Route::get('/register', [AuthController::class, 'showRegistrationForm'])->name('register');
+
 Route::post('/register', [AuthController::class, 'register']);
+
 
 Route::get('/phpinfo', function () {
     return view('phpinfo');
@@ -127,7 +128,6 @@ Route::get('/comment', function () {
     return view('component/forms/tinymce-comment');
 });
 
-//Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
