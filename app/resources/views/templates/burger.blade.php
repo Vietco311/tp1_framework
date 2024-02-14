@@ -6,12 +6,6 @@
     <title>@yield('title')</title>
     <link rel="stylesheet" href="{{ asset('css/menu/burger.css') }}">
     <link rel="stylesheet" href="{{ asset('css/couleur/' . $blog->couleur_blog . '.css') }}">
-    <style>
-        .intersection {
-            height: 50px; /* valeur variable dans le dashboard */
-            background-color : #ffffff; /* valeur variable dans le dashboard */
-        }
-    </style>
 </head>
 <body><header>
         <!-- Contenu de l'en-tête -->
