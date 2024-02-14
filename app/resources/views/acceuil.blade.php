@@ -11,14 +11,13 @@
 <body>
     @include('templates/'. $blog->template_blog) 
     <div class="base-container">
-        <h1 class="titre-acceuil">Nom du site</h1>
+        @include('titre-site')
         <ul class="page-container">
             <li><a class="acceuil-button" href="/page-example">Page 1</a ></li>
             <li><a class="acceuil-button" href="#">Page 2</a ></li>
         </ul>
-     
+        @include('comment') 
     </div>
-    @include('comment') 
 </body>
 
 </html>
