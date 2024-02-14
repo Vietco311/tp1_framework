@@ -34,10 +34,10 @@
                                 <h4 class="card-title">{{ $blog->nom_blog }}</h4>
                                 <p class="card-text">URL: {{ $blog->url_blog }}</p>
                                 <p class="card-text">Sujet: {{ $blog->sujet_blog }}</p>
-                                <p class="card-text">Couleur: {{ $blog->couleur_blog }}</p>
-                                <p class="card-text">Couleur des séparations : {{ $blog->couleur_separation_blog}}</p>
+                                <p class="card-text">Couleur: {{ ucfirst($blog->couleur_blog) }}</p>
+                                <p class="card-text">Couleur des séparations <span style="background-color: {{ $blog->couleur_separation_blog }}; color: {{ $blog->couleur_separation_blog }}; border: 2px solid black;">jqoihvuo</span>  </p>
                                 <p class="card-text">Taille des séparations : {{ $blog->taille_separation_blog}}</p>
-                                <p class="card-text">Template: {{ $blog->template_blog }}</p>
+                                <p class="card-text">Template: {{ ucfirst($blog->template_blog) }}</p>
 
                                 <!-- Ajoutez d'autres informations du blog ici -->
                                 <a href="{{ route('view-blog', ['id' => $blog->id_blog]) }}" class="btn btn-primary mb-2">Voir le blog</a>

@@ -67,7 +67,8 @@ class ArticleController extends Controller
     public function show($articleId)
     {
         $article = Article::findOrFail($articleId);
-        return view('blogs.showarticle', ['article' => $article, 'blog'=> $article->blog, 'articles' => $article->blog->articles]);
+        $commentsApprouve = $article->commentaires()->where('etat_commentaire', true)->get();
+        return view('blogs.showarticle', ['article' => $article, 'blog'=> $article->blog, 'articles' => $article->blog->articles, 'commentsApprouve' => $commentsApprouve]);
     }
 
     public function commentaires()
