@@ -13,9 +13,9 @@
 
 <body>
     @include('templates.' . $blog->template_blog)
-    @include('titre-site')
+    
     <div class="base-container"> 
-         
+        @include('titre-site')
         <div class="section-article">    
             <h1 class="titre-page">{{ $article->nom_article }}</h1>        
             <p class="auteur-article">Auteur: {{ $article->auteur_article }}</p>
