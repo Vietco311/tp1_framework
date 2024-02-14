@@ -68,6 +68,18 @@ nav {
     color: #000000;
 }
 
-p {
+.contenu-article {
+    color: #000000;
+}
+
+.auteur-article {
+    color: #000000;
+}
+
+.date-article {
+    color: #000000;
+}
+
+.image-article {
     color: #000000;
 }

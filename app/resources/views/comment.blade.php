@@ -15,33 +15,29 @@
 
     <!-- Liste des commentaires -->
     <ul class="comment-list">
-        <!-- Liste des commentaires -->
-        <ul class="comment-list">
-            @if (isset($article))
-                @foreach ($article->commentaires as $commentaire)
-                    <li class="comment">
-                        <div class="comment-author">{{ $commentaire->pseudo_commentaire }}</div>
-                        <div class="comment-content">
-                            {{ $commentaire->contenu_commentaire }}
-                        </div>
-                    </li>
-                @endforeach
-            @elseif(isset($blog))
-                @foreach ($comms as $commentaire)
-                    <li class="comment">
-                        <div class="comment-author">{{ $commentaire->pseudo_commentaire_blog }}</div>
-                        <div class="comment-content">
-                            {{ $commentaire->contenu_commentaire_blog }}
-                        </div>
-                    </li>
-                @endforeach
-            @endif
-        </ul>
+        @if (isset($article))
+            @foreach ($article->commentaires as $commentaire)
+                <li class="comment">
+                    <div class="comment-author">{{ $commentaire->pseudo_commentaire }}</div>
+                    <div class="comment-content">
+                        {!! $commentaire->contenu_commentaire !!}
+                    </div>
+                </li>
+            @endforeach
+        @elseif(isset($blog))
+            @foreach ($comms as $commentaire)
+                <li class="comment">
+                    <div class="comment-author">{{ $commentaire->pseudo_commentaire_blog }}</div>
+                    <div class="comment-content">
+                        {{ $commentaire->contenu_commentaire_blog }}
+                    </div>
+                </li>
+            @endforeach
+        @endif
+    </ul>
 
-<!-- Formulaire pour ajouter un nouveau commentaire -->
-<div class="comment-form">
-    <h3>Ajouter un commentaire</h3>
+    <!-- Formulaire pour ajouter un nouveau commentaire -->
+    <div class="comment-form">
+        <h3>Ajouter un commentaire</h3>
 
-            @include('components/forms/tinymce-comment')
-
-
+        @include('components/forms/tinymce-comment')
