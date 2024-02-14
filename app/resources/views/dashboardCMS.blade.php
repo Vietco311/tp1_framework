@@ -16,10 +16,10 @@
         <!-- Bouton de déconnexion -->
         <form action="{{ route('logout') }}" method="POST">
             @csrf
-            <button type="submit" class="btn btn-danger">Déconnexion</button>
+            <button type="submit" class="btn btn-danger mt-3 mb-3">Déconnexion</button>
         </form>
         
-        <a href="{{ route('create-site') }}" class="btn btn-primary">Créer un site</a>
+        <a href="{{ route('create-site') }}" class="btn btn-primary mt-3 mb-3">Créer un site</a>
         
         <!-- Liste des blogs de l'utilisateur -->
         <h2>Mes Blogs</h2>
@@ -30,7 +30,7 @@
                 @foreach ($user->blogs as $blog)
                     <div class="col-md-4 mb-3">
                         <div class="card">
-                            <div class="card-body">
+                            <div class="card-body d-flex flex-column">
                                 <h4 class="card-title">{{ $blog->nom_blog }}</h4>
                                 <p class="card-text">URL: {{ $blog->url_blog }}</p>
                                 <p class="card-text">Sujet: {{ $blog->sujet_blog }}</p>
@@ -40,13 +40,13 @@
                                 <p class="card-text">Template: {{ ucfirst($blog->template_blog) }}</p>
 
                                 <!-- Ajoutez d'autres informations du blog ici -->
-                                <a href="{{ route('view-blog', ['id' => $blog->id_blog]) }}" class="btn btn-primary">Voir le blog</a>
-                                <a href="{{ route('create-article', ['blog' => $blog->id_blog]) }}" class="btn btn-success">Créer un article</a>
-                                <a href="{{ route('edit-blog', ['id' => $blog->id_blog]) }}" class="btn btn-warning">Modifier le blog</a>
-                                <form action="{{ route('delete-blog', ['id' => $blog->id_blog]) }}" method="POST" style="display: inline;">
+                                <a href="{{ route('view-blog', ['id' => $blog->id_blog]) }}" class="btn btn-primary mb-2">Voir le blog</a>
+                                <a href="{{ route('create-article', ['blog' => $blog->id_blog]) }}" class="btn btn-success mb-2">Créer un article</a>
+                                <a href="{{ route('edit-blog', ['id' => $blog->id_blog]) }}" class="btn btn-warning mb-2">Modifier le blog</a>
+                                <form action="{{ route('delete-blog', ['id' => $blog->id_blog]) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="btn btn-danger">Supprimer le blog</button>
+                                    <button type="submit" class="btn btn-danger mb-2 w-100">Supprimer le blog</button>
                                 </form>
                                 <!-- Section pour afficher la liste des articles -->
                                 <h4>Articles</h4>

@@ -6,7 +6,7 @@ Create table compte (
     );
 
     
-    Create table blog (
+Create table blog (
     id_blog INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
     mail_compte VARCHAR(255) NOT NULL,
     nom_blog VARCHAR(255) NOT NULL,
@@ -21,7 +21,7 @@ Create table compte (
     );
     
 
-    Create table article (
+Create table article (
     id_blog INT NOT NULL,
     id_article INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
     nom_article VARCHAR(255) NOT NULL,
@@ -32,7 +32,7 @@ Create table compte (
     FOREIGN KEY (id_blog) REFERENCES blog(id_blog)
     );
     
-    Create table commentaire (
+Create table commentaire (
     id_commentaire INT AUTO_INCREMENT PRIMARY KEY,
     id_article INT NOT NULL,
     pseudo_commentaire VARCHAR(255) NOT NULL,
@@ -42,7 +42,7 @@ Create table compte (
     FOREIGN KEY (id_article) REFERENCES article(id_article)
     );
 
-    Create table commentaire_blog (
+Create table commentaire_blog (
     id_commentaire_blog INT AUTO_INCREMENT PRIMARY KEY,
     id_blog INT NOT NULL,
     pseudo_commentaire_blog VARCHAR(255) NOT NULL,
