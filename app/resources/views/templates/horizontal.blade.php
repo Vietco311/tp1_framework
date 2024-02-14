@@ -14,9 +14,9 @@
         <nav>
             <!-- Menu horizontal -->
             <ul>
-                <li class="button-container"><a class="menu-link horizontal-link" href="{{ route('view-blog', ['id' => $blog->id_blog]) }}">Accueil</a></li>
+                <li class="button-container"><form style="height: 100%" action="{{ route('view-blog', ['id' => $blog->id_blog]) }}"><button type="submit" class="menu-button horizontal-button">Accueil</button></form></li>
                 @foreach ($articles as $article)
-                    <li class="button-container"><a class="menu-link horizontal-link" href="{{ route('view-article', ['articleId' => $article->id_article]) }}">{{ $article->nom_article }}</a></li>
+                    <li class="button-container"><form style="height: 100%" action="{{ route('view-article', ['articleId' => $article->id_article]) }}"><button type="submit" class="menu-button horizontal-button">{{ $article->nom_article }}</button></form></li>
                 @endforeach
             </ul>
                 <!-- Ajoute d'autres éléments du menu selon tes besoins -->

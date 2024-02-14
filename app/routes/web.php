@@ -127,6 +127,10 @@ Route::get('/comment', function () {
     return view('component/forms/tinymce-comment');
 });
 
+Route::get('/ecrire-article', function () {
+    return view('component/forms/tinymce-edit');
+});
+
 //Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

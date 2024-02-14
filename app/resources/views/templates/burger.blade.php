@@ -13,10 +13,10 @@
         <nav class="hide">
             <!-- Menu burger -->
             <ul>
-                <li><a class="menu-button burger-button" href="{{ route('view-blog', ['id' => $blog->id_blog]) }} ">Accueil</a></li>
+                <li><form style="height: 100%" action="{{ route('view-blog', ['id' => $blog->id_blog]) }}"><button type="submit" class="menu-button burger-button">Accueil</button></form></li>
                 
                 @foreach ($articles as $article)
-                    <li><a class="menu-button burger-button" href="{{ route('view-article', ['articleId' => $article->id_article]) }}">{{ $article->nom_article }}</a></li>
+                    <li><form style="height: 100%" action="{{ route('view-article', ['articleId' => $article->id_article]) }}"><button type="submit" class="menu-button burger-button">{{ $article->nom_article }}</button></form></li>
                 @endforeach
             </ul>
 
