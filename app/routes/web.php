@@ -9,6 +9,7 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\CommentaireController;
 use App\Http\Controllers\CommentaireBlogController;
+use App\Http\Controllers\ImageController;
 
 
 /*
@@ -60,12 +61,12 @@ Route::middleware(['auth'])->group(function () {
 
     Route::post('/commentBlog/store', [CommentaireBlogController::class, 'store'])->name('commentBlog.store');
 
+    Route::get('/add-text-to-image', [ImageController::class, 'addTextToImage'])->name('addTextToImage');
+
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
+
     });
-
-
-
 
 
 
@@ -85,6 +86,7 @@ Route::post('/login', [AuthController::class, 'login']);
 Route::get('/register', [AuthController::class, 'showRegistrationForm'])->name('register');
 
 Route::post('/register', [AuthController::class, 'register']);
+
 
 
 Route::get('/phpinfo', function () {
