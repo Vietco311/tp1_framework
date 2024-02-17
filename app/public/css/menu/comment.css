@@ -1,9 +1,10 @@
 .comment-section {
     margin: 20px 0px;
-    padding: 1em;
+    padding: 2em;
     border-radius: 20px;
     box-shadow: 0em 0.5em 0.5em rgba(0, 0, 0, 0.5);
     min-width: 700px;
+    width: 100%;
 }
 
 .comment-list {

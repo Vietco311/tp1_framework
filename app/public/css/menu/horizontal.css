@@ -25,6 +25,14 @@ nav ul {
     height: 100%;
 }
 
+.titre-container{
+    height: inherit;
+}
+
+.blog-image{
+    height: inherit;
+}
+
 nav li {
     display: flex;
     height: 100%;

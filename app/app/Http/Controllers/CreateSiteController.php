@@ -27,24 +27,25 @@ class CreateSiteController extends Controller
         ]);
 
         $taille_separation_blog = $request->input('taille_separation_blog') ? $request->input('taille_separation_blog') . 'px' : '10px';
+        $nom_blog = $request->input('nom_blog');
 
         $imagePath = public_path('image/banniere.png');
 
         $image = Image::gd()->read($imagePath);
 
-        $textColor = "#ffffff";
+        $textColor = "#000000";
 
         $fontPath = public_path('css/police/OpenSans-VariableFont_wdth,wght.ttf');
-        $fontSize = 20;
+        $fontSize = 60;
 
-        $text = 'Votre texte ici';
+        
+        $x = $image->width()/2;
+        $y = $image->height()/2 + 45;
 
-        $x = 50;
-        $y = 50;
-
-        $image->text($text, $x, $y, function(FontFactory $font) use ($fontPath, $fontSize, $textColor) {
+        $image->text($nom_blog, $x, $y, function(FontFactory $font) use ($fontPath, $fontSize, $textColor) {
             $font->file($fontPath);
             $font->size($fontSize);
+            $font->align('center');
             $font->color($textColor);
         });
 

@@ -85,3 +85,11 @@ nav.show {
 .base-container {
     align-items: stretch;
 }
+
+.titre-container {
+    width: inherit;
+}
+
+.blog-image{
+    width: inherit;
+}

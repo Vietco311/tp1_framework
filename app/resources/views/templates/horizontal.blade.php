@@ -12,8 +12,10 @@
 <body>
     <header>
         <nav>
+            
             <!-- Menu horizontal -->
             <ul>
+                @include('titre-site')
                 <li class="button-container"><form style="height: 100%" action="{{ route('view-blog', ['id' => $blog->id_blog]) }}"><button type="submit" class="menu-button horizontal-button">Accueil</button></form></li>
                 @foreach ($articles as $article)
                     <li class="button-container"><form style="height: 100%" action="{{ route('view-article', ['articleId' => $article->id_article]) }}"><button type="submit" class="menu-button horizontal-button">{{ $article->nom_article }}</button></form></li>
