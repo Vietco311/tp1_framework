@@ -61,7 +61,6 @@ Route::middleware(['auth'])->group(function () {
 
     Route::post('/commentBlog/store', [CommentaireBlogController::class, 'store'])->name('commentBlog.store');
 
-    Route::get('/add-text-to-image', [ImageController::class, 'addTextToImage'])->name('addTextToImage');
 
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
