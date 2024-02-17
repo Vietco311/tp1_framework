@@ -71,12 +71,14 @@ class AuthController extends Controller
     {
         $request->validate([
             'mail_compte' => 'required|email|unique:compte',
-            'mdp_compte' => 'required|min:6|confirmed', // Ajout de la règle 'confirmed'
+            'mdp_compte' => 'required|min:8|confirmed|regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]+$/',
             'nom_compte' => 'required',
             'prenom_compte' => 'required',
         ], [
             'mdp_compte.confirmed' => 'Les mots de passe ne correspondent pas.',
+            'mdp_compte.regex' => 'Le mot de passe doit contenir au moins une majuscule, une minuscule, un chiffre et un caractère spécial.',
         ]);
+        
 
         $user = new \App\Models\User();
         $user->mail_compte = $request->input('mail_compte');
