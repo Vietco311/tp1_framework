@@ -29,18 +29,18 @@ class CreateSiteController extends Controller
         $taille_separation_blog = $request->input('taille_separation_blog') ? $request->input('taille_separation_blog') . 'px' : '10px';
         $nom_blog = $request->input('nom_blog');
 
-        $imagePath = public_path('image/banniere.png');
+        $imagePath = public_path('image/parchemin.png');
 
         $image = Image::gd()->read($imagePath);
 
         $textColor = "#000000";
 
-        $fontPath = public_path('css/police/OpenSans-VariableFont_wdth,wght.ttf');
+        $fontPath = public_path('police/OpenSans-VariableFont_wdth,wght.ttf');
         $fontSize = 60;
 
         
         $x = $image->width()/2;
-        $y = $image->height()/2 + 45;
+        $y = $image->height()/2;
 
         $image->text($nom_blog, $x, $y, function(FontFactory $font) use ($fontPath, $fontSize, $textColor) {
             $font->file($fontPath);

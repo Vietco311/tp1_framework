@@ -58,6 +58,9 @@ Create table param_image_blog (
     param_image_blog_id INT PRIMARY KEY,
     param_image_blog_url VARCHAR(255) NOT NULL,
     param_image_blog_x INT NOT NULL,
-    param_image_blog_y INT NOT NULL,
+    param_image_blog_y INT NOT NULL
 )
     
+INSERT INTO param_image_blog (param_image_blog_id, param_image_blog_url, param_image_blog_x, param_image_blog_y) VALUES (0, 'banniere', 540, 405);
+INSERT INTO param_image_blog (param_image_blog_id, param_image_blog_url, param_image_blog_x, param_image_blog_y) VALUES (1, 'parchemin', 598, 640);
+INSERT INTO param_image_blog (param_image_blog_id, param_image_blog_url, param_image_blog_x, param_image_blog_y) VALUES (2, 'bulle', 640, 320);

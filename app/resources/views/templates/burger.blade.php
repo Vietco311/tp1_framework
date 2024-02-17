@@ -10,9 +10,10 @@
 <body><header>
         <!-- Contenu de l'en-tête -->
         <div class="burger-menu" onclick="toggleMenu()">☰</div>
+        @include('titre-site')
         <nav class="hide">
             <!-- Menu burger -->
-            @@include('titre-site')
+            
             <ul>
                 <li><form style="height: 100%" action="{{ route('view-blog', ['id' => $blog->id_blog]) }}"><button type="submit" class="menu-button burger-button">Accueil</button></form></li>
                 
