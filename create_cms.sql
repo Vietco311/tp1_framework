@@ -15,7 +15,7 @@ Create table blog (
     couleur_separation_blog VARCHAR(255) NOT NULL,
     taille_separation_blog VARCHAR(255) NOT NULL,
     template_blog VARCHAR(255) NOT NULL,
-    image_blog VARCHAR(255) NOT NULL,
+    image_blog VARCHAR(255),
     sujet_blog VARCHAR(255),
     FOREIGN KEY (mail_compte) REFERENCES compte(mail_compte)
     );

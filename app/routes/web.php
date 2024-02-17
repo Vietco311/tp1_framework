@@ -70,11 +70,6 @@ Route::middleware(['auth'])->group(function () {
 
 
 
-Route::middleware(['web'])->group(function () {
-    // Vos autres routes ici
-
-    
-});
 
 
 Route::get('/', [AccueilBackController::class, 'index'])->name('welcome');
