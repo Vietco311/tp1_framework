@@ -83,3 +83,7 @@ nav {
 .image-article {
     color: #000000;
 }
+
+.section-article > * > *{
+    color: #000000;
+}

@@ -21,6 +21,7 @@ header {
 .burger-menu {
     display: block;
     cursor: pointer;
+    align-self: flex-start;
     transition: transform 0.5s;
 }
 
@@ -82,14 +83,14 @@ nav.show {
     margin: 0px 20px;
 }
 
-.base-container {
-    align-items: stretch;
-}
-
 .titre-container {
+    align-self: center;
     width: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .blog-image{
-    width: inherit;
+    width: 90%;
 }

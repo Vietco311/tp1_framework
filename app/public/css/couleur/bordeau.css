@@ -78,3 +78,11 @@ nav {
 .image-article {
     color: #1f1d1d;
 }
+
+.menu-link{
+    color: #ecdddd;
+}
+
+.section-article > * > *{
+    color: #1f1d1d;
+}

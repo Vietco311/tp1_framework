@@ -3,8 +3,8 @@
 <form class="tinymce" method="post" action="{{ route('comment-store') }}">
     @csrf
     <input type="hidden" name="id_article" value="{{ $article->id_article }}">
-    <div class="form-group">
-        <label for="pseudo_commentaire">Nom de l'auteur:</label>
+    <div class="input-group mb-1 w-50">
+        <span class="input-group-text" for="pseudo_commentaire">Nom de l'auteur:</span>
         <input type="text" name="pseudo_commentaire" class="form-control" required>
     </div>
     <textarea name="contenu_commentaire" id="myeditorinstance" placeholder="Ecrivez votre commentaire..."></textarea>
@@ -13,8 +13,8 @@
 <form method="post" action="{{ route('commentBlog.store') }}">
     @csrf
     <input type="hidden" name="id_blog" value="{{ $blog->id_blog }}">
-    <div class="form-group">
-        <label for="pseudo_commentaire">Nom de l'auteur:</label>
+    <div class="input-group mb-1 w-50">
+        <span class="input-group-text" for="pseudo_commentaire">Nom de l'auteur:</span>
         <input type="text" name="pseudo_commentaire" class="form-control" required>
     </div>
     <textarea name="contenu_commentaire" id="myeditorinstance" placeholder="Ecrivez votre commentaire..."></textarea>
