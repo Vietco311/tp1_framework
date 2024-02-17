@@ -24,6 +24,8 @@ class Blog extends Model
         'template_blog',
         'image_blog',
         'param_image_blog_id',
+        'police_titre_blog',
+        'couleur_titre_blog', 
         'sujet_blog',
     ];
 

@@ -47,9 +47,21 @@
             <div class="input-group w-50 mb-2">
                 <label class="input-group-text" for="image_blog">Image du titre du blog</label>
                 <select class="form-select" name="image_blog">
-                    <option value="image1">Image 1</option>
-                    <option value="image2">Image 2</option>
-                    <option value="image3">Image 3</option>
+                    <option value="0">Banniere</option>
+                    <option value="1">Parchemin</option>
+                    <option value="2">Bulle</option>
+                </select>
+            </div>
+            <div class="input-group w-50 mb-2">
+                <label class="input-group-text" for="image_couleur">Couleur du titre</label>
+                <input class="form-control" type="color" name="image_couleur">
+            </div>
+            <div class="input-group w-50 mb-2">
+                <label class="input-group-text" for="image_police">Police du titre</label>
+                <select class="form-select" name="image_police">
+                    <option value="OpenSans-VariableFont_wdth,wght">Open Sans</option>
+                    <option value="Montserrat-VariableFont_wght">Montserrat</option>
+                    <option value="Lora-VariableFont_wght">Lora</option>
                 </select>
             </div>
             <div class="input-group w-50 mb-2">
