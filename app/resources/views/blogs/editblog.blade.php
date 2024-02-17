@@ -24,6 +24,11 @@
                 <input type="text" name="nom_blog" value="{{ $blog->nom_blog }}" class="form-control" required>
             </div>
 
+            <div class="form-group">
+                <label for="sujet_blog">Sujet du blog:</label>
+                <input type="text" name="sujet_blog" value="{{ $blog->sujet_blog }}" class="form-control">
+            </div>
+
             <label for="couleur_blog">Couleur du blog:</label>
             <select name="couleur_blog"  value="{{ $blog->couleur_blog }}">
                 <option value="bordeau">Bordeau</option>
@@ -40,10 +45,20 @@
 
 
             <label for="image_blog">Image du titre du blog:</label>
-            <select name="image_blog" value="{{ $blog->image_blog }}">
-                <option value="image1">Image 1</option>
-                <option value="image2">Image 2</option>
-                <option value="image3">Image 3</option>
+            <select name="image_blog" value="{{ $blog->param_image_blog_id }}">
+                <option value="0">Banniere</option>
+                <option value="1">Parchemin</option>
+                <option value="2">Bulle</option>
+            </select>
+
+            <label for="image_couleur">Couleur du titre:</label>
+            <input type="color" name="image_couleur" value="{{ $blog->couleur_titre_blog }}">
+
+            <label for="image_police">Police du titre:</label>
+            <select name="image_police" value="{{ $blog->police_titre_blog }}">
+                <option value="OpenSans-VariableFont_wdth,wght">Open Sans</option>
+                <option value="Montserrat-VariableFont_wght">Montserrat</option>
+                <option value="Lora-VariableFont_wght">Lora</option>
             </select>
 
             <label for="template_blog">Template du blog:</label>

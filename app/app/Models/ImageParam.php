@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class ParamImageBlog extends Model
+class ImageParam extends Model
 {
     use HasFactory;
 
@@ -24,4 +24,6 @@ class ParamImageBlog extends Model
     {
         return $this->hasMany(Blog::class, 'param_image_blog_id', 'param_image_blog_id');
     }
+
+   
 }
