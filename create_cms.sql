@@ -16,8 +16,10 @@ Create table blog (
     taille_separation_blog VARCHAR(255) NOT NULL,
     template_blog VARCHAR(255) NOT NULL,
     image_blog VARCHAR(255),
+    param_image_blog_id INT,
     sujet_blog VARCHAR(255),
     FOREIGN KEY (mail_compte) REFERENCES compte(mail_compte)
+    FOREIGN KEY (param_image_blog_id) REFERENCES param_image_blog(param_image_blog_id)
     );
     
 
@@ -51,4 +53,11 @@ Create table commentaire_blog (
     date_commentaire_blog TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (id_blog) REFERENCES blog(id_blog)
     );
+
+Create table param_image_blog (
+    param_image_blog_id INT PRIMARY KEY,
+    param_image_blog_url VARCHAR(255) NOT NULL,
+    param_image_blog_x INT NOT NULL,
+    param_image_blog_y INT NOT NULL,
+)
     
