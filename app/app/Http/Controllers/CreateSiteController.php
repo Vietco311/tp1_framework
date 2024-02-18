@@ -58,10 +58,8 @@ class CreateSiteController extends Controller
             $font->color($textColor);
         });
 
-
-        // Créez un nouveau blog
         $blog = Blog::create([
-            'mail_compte' => auth()->user()->mail_compte, // Assurez-vous que l'utilisateur est connecté
+            'mail_compte' => auth()->user()->mail_compte, 
             'nom_blog' => $request->input('nom_blog'),
             'sujet_blog' => $request->input('sujet_blog'),
             'couleur_blog' => $request->input('couleur_blog'),
@@ -84,4 +82,5 @@ class CreateSiteController extends Controller
         
         return redirect()->route('dashboard')->with('success', 'Le blog a été créé avec succès!');
     }
+
 }

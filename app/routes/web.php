@@ -10,6 +10,7 @@ use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\CommentaireController;
 use App\Http\Controllers\CommentaireBlogController;
 use App\Http\Controllers\ImageController;
+use App\Http\Controllers\ImagePreviewController;
 
 
 /*
@@ -60,6 +61,9 @@ Route::middleware(['auth'])->group(function () {
     Route::put('/blog/{id}', [BlogController::class, 'update'])->name('blog.update');
 
     Route::post('/commentBlog/store', [CommentaireBlogController::class, 'store'])->name('commentBlog.store');
+
+    // Ajoutez cette route dans vos fichiers de routes (web.php)
+Route::post('/generate-image-preview', 'CreateSiteController@generateImagePreview')->name('generate-image-preview');
 
 
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
