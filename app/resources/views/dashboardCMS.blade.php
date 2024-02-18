@@ -37,9 +37,31 @@
                                 <p class="card-text">Couleur: {{ ucfirst($blog->couleur_blog) }}</p>
                                 <p class="card-text">Couleur des séparations <span style="background-color: {{ $blog->couleur_separation_blog }}; color: {{ $blog->couleur_separation_blog }}; border: 2px solid black;">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span></p>
                                 <p class="card-text">Taille des séparations : {{ $blog->taille_separation_blog}}</p>
-                                <p class="card-text">Image du titre: {{ ucfirst($blog->image_blog) }}</p>
+                                <p class="card-text">Image du titre: 
+                                                    @if ($blog->param_image_blog_id == 0)
+                                                        Banniere
+                                                    @elseif ($blog->param_image_blog_id == 1)
+                                                        Parchemin
+                                                    @elseif ($blog->param_image_blog_id == 2)
+                                                        Bulle
+                                                    @else
+                                                        <!-- Ajoutez une valeur par défaut ou un message d'erreur au besoin -->
+                                                        Image Inconnue
+                                                    @endif
+                                </p>
                                 <p class="card-text">Couleur du titre: <span style="background-color : {{ $blog->couleur_titre_blog}}; color: {{ $blog->couleur_titre_blog}}; border: 2px solid black;">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span>  </p>
-                                <p class="card-text">Police du titre: {{ ucfirst($blog->police_titre_blog) }}</p>
+                                <p class="card-text">Police du titre: 
+                                                    @if ($blog->police_titre_blog == "OpenSans-VariableFont_wdth,wght")
+                                                        Open Sans
+                                                    @elseif ($blog->police_titre_blog == "Montserrat-VariableFont_wght")
+                                                        Montserrat
+                                                    @elseif ($blog->police_titre_blog == "Lora-VariableFont_wght")
+                                                        Lora
+                                                    @else
+                                                        <!-- Ajoutez une valeur par défaut ou un message d'erreur au besoin -->
+                                                        Police Inconnue
+                                                    @endif
+                                </p>
                                 <p class="card-text">Template: {{ ucfirst($blog->template_blog) }}</p>
 
                                 <!-- Ajoutez d'autres informations du blog ici -->
