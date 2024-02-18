@@ -1,4 +1,4 @@
-<script src="https://cdn.tiny.cloud/1/bijf7wvt9vu9sezc82bddgu64ohwgpiaw9c8sxy82gm5lxng/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+<script src="https://cdn.tiny.cloud/1/tt01fa6dmtscmjge7jvzccewgnck5ip9pdmflo8bb2okpi8i/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
 <script>
   tinymce.init({
     selector: 'textarea#myeditorinstance', // Replace this CSS selector to match the placeholder element for TinyMCE
