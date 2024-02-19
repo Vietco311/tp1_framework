@@ -88,8 +88,8 @@ public function update(Request $request, $id)
     ]);
 
     $nom_blog = $request->input('nom_blog');
-    // Use the null coalescing operator to handle the 'px' concatenation
-    $taille_separation_blog = $request->input('taille_separation_blog') ? $request->input('taille_separation_blog') . 'px' : '10px';
+    // Use the null coalescing operator to handle the 'em' concatenation
+    $taille_separation_blog = $request->input('taille_separation_blog') ? $request->input('taille_separation_blog') . 'em' : '10em';
 
     $image_blog = $request->input('image_blog');
     $image_couleur = $request->input('image_couleur');

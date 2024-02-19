@@ -29,7 +29,7 @@ class CreateSiteController extends Controller
             'template_blog' => 'nullable|string|max:255', 
         ]);
 
-        $taille_separation_blog = $request->input('taille_separation_blog') ? $request->input('taille_separation_blog') . 'px' : '10px';
+        $taille_separation_blog = $request->input('taille_separation_blog') ? $request->input('taille_separation_blog') . 'em' : '10em';
         $nom_blog = $request->input('nom_blog');
 
 
