@@ -34,10 +34,8 @@ class BlogController extends Controller
         $password = $request->input('password');
         $blogId = $request->input('blogId');
 
-        // Récupérer le blog correspondant à l'ID
         $blog = Blog::findOrFail($blogId);
 
-        // Vérifier si le mot de passe correspond
         if (Hash::check($password, $blog->user->password)) {
             return response()->json(['success' => true]);
         } else {
@@ -53,6 +51,13 @@ class BlogController extends Controller
             return redirect()->route('dashboard')->with('error', 'Le blog n\'existe pas.');
         }
 
+        $blog->articles()->with('commentaires')->get()->each(function ($article) {
+            $article->commentaires()->delete();
+        });
+    
+
+        $blog->comms()->delete();
+
         $blog->articles()->delete();
 
         $blog->delete();
@@ -60,7 +65,6 @@ class BlogController extends Controller
         return redirect()->route('dashboard')->with('success', 'Le blog a été supprimé avec succès.');
     }
 
-    // Dans votre contrôleur, par exemple BlogController.php
 
 public function edit($id)
 {
@@ -88,7 +92,7 @@ public function update(Request $request, $id)
     ]);
 
     $nom_blog = $request->input('nom_blog');
-    // Use the null coalescing operator to handle the 'em' concatenation
+    
     $taille_separation_blog = $request->input('taille_separation_blog') ? $request->input('taille_separation_blog') . 'em' : '10em';
 
     $image_blog = $request->input('image_blog');
@@ -153,6 +157,7 @@ public function comms()
     {
         return $this->hasMany(CommentaireBlog::class, 'id_blog');
     }
+
 
 
 

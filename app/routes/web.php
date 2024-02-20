@@ -68,9 +68,9 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/moderate-comments-blog/{idBlog}', [CommentaireBlogController::class, 'moderateComments'])->name('moderate-comments-blog');
 
-    // Ajoutez cette route dans vos fichiers de routes (web.php)
-Route::post('/generate-image-preview', 'CreateSiteController@generateImagePreview')->name('generate-image-preview');
+    Route::post('/generate-image-preview', 'CreateSiteController@generateImagePreview')->name('generate-image-preview');
 
+    Route::post('/save-content', [App\Http\Controllers\AcceuilController::class, 'saveContent'])->name('saveContent');
 
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
@@ -92,54 +92,6 @@ Route::get('/register', [AuthController::class, 'showRegistrationForm'])->name('
 Route::post('/register', [AuthController::class, 'register']);
 
 
-
-Route::get('/phpinfo', function () {
-    return view('phpinfo');
-});
-
-Route::get('/acceuil', function () {
-    return view('acceuil');
-});
-
-Route::get('/burger', function () {
-    return view('templates/burger');
-});
-
-Route::get('/titre-site', function () {
-    return view('titre-site');
-});
-
-Route::get('/intersection', function () {
-    return view('components/intersection');
-});
-
-
-Route::get('/horizontal', function () {
-    return view('templates/horizontal');
-});
-
-Route::get('/verticale', function () {
-    return view('templates/verticale');
-});
-
-Route::get('/page-example', function () {
-    return view('pageexample');
-});
-
-Route::get('/ecrire-page', function () {
-    return view('writingpage');
-});
-
-Route::get('/comment', function () {
-    return view('component/forms/tinymce-comment');
-});
-
-Route::get('/ecrire-article', function () {
-    return view('component/forms/tinymce-edit');
-});
-
-//Auth::routes();
-
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::post('/save-content', [App\Http\Controllers\AcceuilController::class, 'saveContent'])->name('saveContent');
+
