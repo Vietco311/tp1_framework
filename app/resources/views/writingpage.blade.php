@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="{{ asset('css/editpage.css') }}">
     <link rel="stylesheet" href="{{ asset('css/couleur/marin.css') }}">
     <x-head.tinymce-config-article />
-    <!-- Inclure tes fichiers CSS, scripts, etc. ici -->
 </head>
 
 <body>

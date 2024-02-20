@@ -19,8 +19,6 @@ class YourController extends Controller
     {
         $content = $request->input('content');
 
-        // Effectue ici le traitement pour sauvegarder le contenu dans ta base de données ou ailleurs
-
         return redirect()->back()->with('success', 'Contenu enregistré avec succès!');
     }
 }

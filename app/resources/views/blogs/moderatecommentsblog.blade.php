@@ -13,7 +13,6 @@
                     <li>
                         <strong>{{ $comment->pseudo_commentaire_blog }}</strong>   {!! $comment->contenu_commentaire_blog !!}
                         
-                        <!-- Ajoutez des boutons pour approuver ou supprimer le commentaire -->
                         <form action="{{ route('approve-comment-blog', ['id' => $comment->id_commentaire_blog]) }}" method="POST" style="display: inline;">
                             @csrf
                             <button type="submit" class="btn btn-success disabled btn-sm">Approuver</button>
@@ -34,7 +33,6 @@
                     <li>
                         <strong>{{ $comment->pseudo_commentaire_blog }}</strong>   {!! $comment->contenu_commentaire_blog !!}
                         
-                        <!-- Ajoutez des boutons pour approuver ou supprimer le commentaire -->
                         <form action="{{ route('approve-comment-blog', ['id' => $comment->id_commentaire_blog]) }}" method="POST" style="display: inline;">
                             @csrf
                             <button type="submit" class="btn btn-success btn-sm">Approuver</button>

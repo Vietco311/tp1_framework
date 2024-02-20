@@ -18,14 +18,12 @@ class CommentaireBlogController extends Controller
 
     public function store(Request $request)
     {
-        // Validation des données du formulaire
         $validatedData = $request->validate([
             'id_blog' => 'required|exists:blog,id_blog',
             'pseudo_commentaire_blog' => 'required|string|max:255',
             'contenu_commentaire_blog' => 'required|string',
         ]);
 
-        // Création du commentaire
         CommentaireBlog::create($validatedData);
 
         return redirect()->back()->with('success', 'Commentaire ajouté avec succès');
@@ -61,5 +59,4 @@ class CommentaireBlogController extends Controller
         return redirect()->back()->with('success', 'Commentaire désapprouvé avec succès');
     }
 
-    // Vous pouvez ajouter d'autres méthodes du contrôleur au besoin
 }

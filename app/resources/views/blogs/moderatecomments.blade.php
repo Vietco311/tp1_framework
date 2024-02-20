@@ -34,7 +34,6 @@
                     <li>
                         <strong>{{ $comment->pseudo_commentaire }}</strong>   {!! $comment->contenu_commentaire !!}
                         
-                        <!-- Ajoutez des boutons pour approuver ou supprimer le commentaire -->
                         <form action="{{ route('approve-comment', ['id' => $comment->id_commentaire]) }}" method="POST" style="display: inline;">
                             @csrf
                             <button type="submit" class="btn btn-success btn-sm">Approuver</button>

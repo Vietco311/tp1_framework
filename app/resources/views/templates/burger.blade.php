@@ -8,11 +8,9 @@
     <link rel="stylesheet" href="{{ asset('css/couleur/' . $blog->couleur_blog . '.css') }}">
 </head>
 <body><header>
-        <!-- Contenu de l'en-tête -->
         <div class="burger-menu" onclick="toggleMenu()">☰</div>
         @include('titre-site')
         <nav class="hide">
-            <!-- Menu burger -->
             
             <ul>
                 <li><form style="height: 100%" action="{{ route('view-blog', ['id' => $blog->id_blog]) }}"><button type="submit" class="menu-button burger-button">Accueil</button></form></li>
@@ -25,7 +23,6 @@
         </nav>
     </header>
 
-    <!-- Ajoute tes scripts ici -->
     <script>
         function toggleMenu() {
             const burgerMenu = document.querySelector('.burger-menu');

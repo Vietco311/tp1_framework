@@ -55,7 +55,6 @@ class BlogController extends Controller
             $article->commentaires()->delete();
         });
     
-
         $blog->comms()->delete();
 
         $blog->articles()->delete();

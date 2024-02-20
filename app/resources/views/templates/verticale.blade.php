@@ -12,7 +12,6 @@
         
         <nav>
             @include('titre-site')
-            <!-- Menu horizontal -->
             <ul>
                 <li class="button-container"><form style="height: 100%; width: 100%" action="{{ route('view-blog', ['id' => $blog->id_blog]) }}"><button type="submit" class="menu-button vertical-button">Accueil</button></form></li>
                 @foreach ($articles as $article)
@@ -21,11 +20,5 @@
             </ul>
         </nav>
     </header>
-
-    <footer>
-        <!-- Contenu du pied de page -->
-    </footer>
-
-    <!-- Ajoute tes scripts ici -->
 </body>
 </html>

@@ -9,7 +9,7 @@ class DashboardCMSController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth'); // Assure que l'utilisateur est connecté
+        $this->middleware('auth'); 
     }
 
     public function index()

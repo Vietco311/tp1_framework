@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="{{ asset('css/couleur/' . $blog->couleur_blog . '.css') }}">
     <link rel="stylesheet" href="{{ asset(('police/montserrat.css'))}}">
 
-    <!-- Inclure tes fichiers CSS, scripts, etc. ici -->
 </head>
 
 <body>

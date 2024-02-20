@@ -1,19 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-@if ($errors->any())
-        <div class="alert alert-danger">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
     <div class="container">
         <h1>Espace Personnel</h1>
         
-        <!-- Bouton de déconnexion -->
         <form action="{{ route('logout') }}" method="POST">
             @csrf
             <button type="submit" class="btn btn-danger mt-3 mb-3">Déconnexion</button>
@@ -21,7 +11,6 @@
         
         <a href="{{ route('create-site') }}" class="btn btn-primary mt-3 mb-3">Créer un site</a>
         
-        <!-- Liste des blogs de l'utilisateur -->
         <h2>Mes Blogs</h2>
         @if ($user->blogs->isEmpty())
             <p>Vous n'avez pas encore créé de blogs.</p>
@@ -45,7 +34,6 @@
                                                     @elseif ($blog->param_image_blog_id == 2)
                                                         Bulle
                                                     @else
-                                                        <!-- Ajoutez une valeur par défaut ou un message d'erreur au besoin -->
                                                         Image Inconnue
                                                     @endif
                                 </p>
@@ -58,13 +46,11 @@
                                                     @elseif ($blog->police_titre_blog == "Lora-VariableFont_wght")
                                                         Lora
                                                     @else
-                                                        <!-- Ajoutez une valeur par défaut ou un message d'erreur au besoin -->
                                                         Police Inconnue
                                                     @endif
                                 </p>
                                 <p class="card-text">Template: {{ ucfirst($blog->template_blog) }}</p>
 
-                                <!-- Ajoutez d'autres informations du blog ici -->
                                 <a href="{{ route('view-blog', ['id' => $blog->id_blog]) }}" class="btn btn-primary mb-2">Voir le blog</a>
                                 <a href="{{ route('create-article', ['blog' => $blog->id_blog]) }}" class="btn btn-success mb-2">Créer un article</a>
                                 <a href="{{ route('edit-blog', ['id' => $blog->id_blog]) }}" class="btn btn-warning mb-2">Modifier le blog</a>
@@ -74,7 +60,6 @@
                                     <button type="submit" class="btn btn-danger mb-2 w-100">Supprimer le blog</button>
                                 </form>
                                 <a href="{{ route('moderate-comments-blog', ['idBlog' => $blog->id_blog]) }}" class="btn btn-primary mb-2">Modérer les commentaires</a>
-                                <!-- Section pour afficher la liste des articles -->
                                 <h4>Articles</h4>
                                 @if ($blog->articles->isEmpty())
                                     <p>Vous n'avez pas encore créé d'articles pour ce blog.</p>

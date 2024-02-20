@@ -18,7 +18,7 @@ class AuthController extends Controller
     public function showLoginForm()
     {
         if (Auth::check()) {
-            return redirect('/dashboard'); // Rediriger si l'utilisateur est déjà connecté
+            return redirect('/dashboard'); 
         }
 
         return view('auth.login');
@@ -54,7 +54,7 @@ class AuthController extends Controller
     public function showRegistrationForm()
     {
         if (Auth::check()) {
-            return redirect('/dashboard'); // Rediriger si l'utilisateur est déjà connecté
+            return redirect('/dashboard'); 
         }
         
         return view('auth.register');

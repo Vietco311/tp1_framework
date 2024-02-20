@@ -23,7 +23,7 @@ class CommentaireController extends Controller
         $article = Article::find($articleId);
 
         if (!$article) {
-            abort(404); // Gérer le cas où l'article n'est pas trouvé
+            abort(404); 
         }
 
         $comments = $article->commentaires()->get();
@@ -40,7 +40,7 @@ class CommentaireController extends Controller
         $comment = Commentaire::find($commentId);
 
         if (!$comment) {
-            abort(404); // Gérer le cas où le commentaire n'est pas trouvé
+            abort(404); 
         }
 
         $comment->update(['etat_commentaire' => true]);
@@ -53,7 +53,7 @@ class CommentaireController extends Controller
         $comment = Commentaire::find($commentId);
     
         if (!$comment) {
-            abort(404); // Gérer le cas où le commentaire n'est pas trouvé
+            abort(404); 
         }
     
         $comment->update(['etat_commentaire' => false]);
