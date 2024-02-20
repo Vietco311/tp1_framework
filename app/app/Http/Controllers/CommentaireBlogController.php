@@ -20,7 +20,7 @@ class CommentaireBlogController extends Controller
     {
         // Validation des données du formulaire
         $validatedData = $request->validate([
-            'id_blog' => 'required|exists:blogs,id_blog',
+            'id_blog' => 'required|exists:blog,id_blog',
             'pseudo_commentaire_blog' => 'required|string|max:255',
             'contenu_commentaire_blog' => 'required|string',
         ]);
@@ -29,6 +29,36 @@ class CommentaireBlogController extends Controller
         CommentaireBlog::create($validatedData);
 
         return redirect()->back()->with('success', 'Commentaire ajouté avec succès');
+    }
+
+    public function moderateComments($idBlog)
+    {
+        $blog = Blog::findOrFail($idBlog);
+        $comms = CommentaireBlog::where('id_blog', $idBlog)->get();
+
+        $commsApprouve = CommentaireBlog::where('id_blog', $idBlog)->where('etat_commentaire_blog', true)->get();
+        $commsNonApprouve = CommentaireBlog::where('id_blog', $idBlog)->where('etat_commentaire_blog', false)->get();
+
+
+        return view('blogs.moderatecommentsblog', ['blog' => $blog, 'comments' => $comms, 'commentsApprouve' => $commsApprouve, 'commentsNonApprouve' => $commsNonApprouve]);
+    }
+
+    public function approveComment($id)
+    {
+        $comment = CommentaireBlog::findOrFail($id);
+        $comment->etat_commentaire_blog = true;
+        $comment->save();
+
+        return redirect()->back()->with('success', 'Commentaire approuvé avec succès');
+    }
+
+    public function disapproveComment($id)
+    {
+        $comment = CommentaireBlog::findOrFail($id);
+        $comment->etat_commentaire_blog = false;
+        $comment->save();
+
+        return redirect()->back()->with('success', 'Commentaire désapprouvé avec succès');
     }
 
     // Vous pouvez ajouter d'autres méthodes du contrôleur au besoin

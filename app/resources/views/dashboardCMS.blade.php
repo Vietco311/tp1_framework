@@ -73,6 +73,7 @@
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-danger mb-2 w-100">Supprimer le blog</button>
                                 </form>
+                                <a href="{{ route('moderate-comments-blog', ['idBlog' => $blog->id_blog]) }}" class="btn btn-primary mb-2">Modérer les commentaires</a>
                                 <!-- Section pour afficher la liste des articles -->
                                 <h4>Articles</h4>
                                 @if ($blog->articles->isEmpty())

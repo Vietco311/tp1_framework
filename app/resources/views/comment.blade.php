@@ -11,22 +11,23 @@
 
 
 </head>
+
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
 @include('components/intersection')
 <div class="comment-section">
     <h2>Commentaires</h2>
 
     <!-- Liste des commentaires -->
     <ul class="comment-list">
-        @if (isset($article))
-            @foreach ($commentsApprouve as $commentaire)
-                <li class="comment">
-                    <div class="comment-author">{{ $commentaire->pseudo_commentaire }}</div>
-                    <div class="comment-content">
-                        {!! $commentaire->contenu_commentaire !!}
-                    </div>
-                </li>
-            @endforeach
-        @elseif(isset($blog))
+        @if(isset($blog))
             @foreach ($commentsApprouve as $commentaire)
                 <li class="comment">
                     <div class="comment-author">{{ $commentaire->pseudo_commentaire_blog }}</div>
@@ -35,6 +36,16 @@
                     </div>
                 </li>
             @endforeach
+        @elseif (isset($article))
+            @foreach ($commentsApprouve as $commentaire)
+                <li class="comment">
+                    <div class="comment-author">{{ $commentaire->pseudo_commentaire }}</div>
+                    <div class="comment-content">
+                        {!! $commentaire->contenu_commentaire !!}
+                    </div>
+                </li>
+            @endforeach
+        
         @endif
     </ul>
 

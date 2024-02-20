@@ -46,7 +46,7 @@
 
             <div class="form-group">
                 <label for="taille_separation_blog">Taille des séparations:</label>
-                <input type="number" name="taille_separation_blog" value="{{ rtrim($blog->taille_separation_blog, 'px') }}" onchange="updateImagePreview()">
+                <input type="number" name="taille_separation_blog" value="{{ rtrim($blog->taille_separation_blog, 'em') }}" onchange="updateImagePreview()">
             </div>
 
             <div class="form-group">
