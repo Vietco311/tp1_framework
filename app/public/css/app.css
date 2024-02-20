@@ -51,7 +51,8 @@ body{
 
 
 .base-container .titre-container .blog-image{
-    width: 700%;
+    width: 70%;
+    max-height: 35em;
     max-width: 40em;
     margin: 50px 0px;
 }

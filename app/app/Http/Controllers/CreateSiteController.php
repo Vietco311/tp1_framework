@@ -44,7 +44,7 @@ class CreateSiteController extends Controller
         $textColor = $request->input('image_couleur');
 
         $fontPath = public_path('police/'.$request->input('image_police').'.ttf');
-        $fontSize = 75;
+        $fontSize = 125;
 
 
         
