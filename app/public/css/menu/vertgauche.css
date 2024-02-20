@@ -15,7 +15,9 @@ nav {
 }
 
 .titre-container {
+    display: flex;
     width: inherit;
+    justify-content: center;
 }
 
 .blog-image{
@@ -54,8 +56,4 @@ main {
 
 .comment-section {
     margin: 0px 20px;
-}
-
-.base-container {
-    align-items: stretch;
 }
