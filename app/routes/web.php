@@ -42,6 +42,10 @@ Route::middleware(['auth'])->group(function () {
 
     Route::post('/disapprove-comment/{id}', [CommentaireController::class, 'disapproveComment'])->name('disapprove-comment');
 
+    Route::post('/approve-comment-blog/{id}', [CommentaireBlogController::class, 'approveComment'])->name('approve-comment-blog');
+
+    Route::post('/disapprove-comment-blog/{id}', [CommentaireBlogController::class, 'disapproveComment'])->name('disapprove-comment-blog');
+
     Route::delete('/delete-article/{id}', [ArticleController::class, 'destroy'])->name('delete-article');
 
     Route::post('/check-password', [BlogController::class, 'checkPassword'])->name('check-password');
@@ -61,6 +65,8 @@ Route::middleware(['auth'])->group(function () {
     Route::put('/blog/{id}', [BlogController::class, 'update'])->name('blog.update');
 
     Route::post('/commentBlog/store', [CommentaireBlogController::class, 'store'])->name('commentBlog.store');
+
+    Route::get('/moderate-comments-blog/{idBlog}', [CommentaireBlogController::class, 'moderateComments'])->name('moderate-comments-blog');
 
     // Ajoutez cette route dans vos fichiers de routes (web.php)
 Route::post('/generate-image-preview', 'CreateSiteController@generateImagePreview')->name('generate-image-preview');
