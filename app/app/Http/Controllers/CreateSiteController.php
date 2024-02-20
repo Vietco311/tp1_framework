@@ -22,7 +22,7 @@ class CreateSiteController extends Controller
             'sujet_blog' => 'nullable|string|max:255',
             'couleur_blog' => 'required|string|max:255', 
             'couleur_separation_blog' => 'required|string|max:255',
-            'taille_separation_blog' => 'required|integer|min:1',
+            'taille_separation_blog' => 'required|integer|min:0|max:8',
             'image_blog' => 'required|integer|min:0|max:2',
             'image_couleur' => 'required|string|max:255',
             'image_police' => 'required|string|max:255',
