@@ -21,21 +21,21 @@ Le projet consiste en un CMS, site sur lequel on peut créer des sites internet.
 - **Laravel Installer** (optionnel mais recommandé)
 
 ## Installation
--Installez les dépendances PHP via Composer : ``` composer install ```
--Installez les dépendances JavaScript via npm : ``` npm install ```
--Générez une nouvelle clé d'application Laravel : ``` php artisan key:generate ```
--Configurez la base de données dans le fichier .env, puis exécutez les migrations : ``` php artisan migrate ```
--Compilez les assets du front-end : ``` npm run dev ```
--Lancez le serveur de développement : ``` php artisan serve ```
+- Installez les dépendances PHP via Composer : ``` composer install ```
+- Installez les dépendances JavaScript via npm : ``` npm install ```
+- Générez une nouvelle clé d'application Laravel : ``` php artisan key:generate ```
+- Configurez la base de données dans le fichier .env, puis exécutez les migrations : ``` php artisan migrate ```
+- Compilez les assets du front-end : ``` npm run dev ```
+- Lancez le serveur de développement : ``` php artisan serve ```
 
 ### **Serveur**
 - Instancier un fichier ```.env``` à la racine contenant les attributs suivants : 
-   -DB_CONNECTION : 
-   -DB_HOST : 
-   -DB_PORT : 
-   -DB_DATABASE : 
-   -DB_USERNAME : 
-   -DB_PASSWORD :
+   - DB_CONNECTION : 
+   - DB_HOST : 
+   - DB_PORT : 
+   - DB_DATABASE : 
+   - DB_USERNAME : 
+   - DB_PASSWORD :
   
 ### **Base de données**
 - Créer une base de données MySQL puis importer le fichier ```create_cms.sql``` pour obtenir uniquement la structure des tables.
