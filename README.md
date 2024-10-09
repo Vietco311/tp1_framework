@@ -41,5 +41,5 @@ Le projet consiste en un CMS, site sur lequel on peut créer des sites internet.
 - Créer une base de données MySQL puis importer le fichier ```create_cms.sql``` pour obtenir uniquement la structure des tables.
 
 ## Auteur
--Marie Eveillé
--Anthony Colin
+- Marie Eveillé
+- Anthony Colin
